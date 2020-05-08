@@ -1,0 +1,59 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+body {
+    background-color: black;
+}
+
+.meeting-details {
+    background-color: #ffffff;
+    border: 1px;
+    border-bottom: slategray;
+    border-bottom-style: dotted;
+    padding: 20px 20px 20px 20px;
+    
+}
+
+.background {
+    background-color:#ffffff;
+}
+
+.background2 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.grid-container-2row {
+    display: grid;
+    grid-template-columns: 160px 160px 160px 160px 160px 160px ;
+    grid-template-rows: 180px 180px;
+    gap: 0px 0px ;
+    grid-template-areas: ". . ." ". . .";
+    justify-content:center;
+}
+
+scratch {
+    background-color: s;
+}
+
+.grid-container-border * { 
+    border: 2px solid black;
+    position: relative;
+}
+
+.item {
+    grid-column: span 2;
+}
+
+footer {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    border-top: 1px solid #d1d1d1;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom:10px;
+    /* padding-left: 20px; */
+  }
