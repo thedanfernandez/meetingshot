@@ -23,6 +23,7 @@
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #84a754;
     text-align: center;
+    position: relative;
 }
 
 .video-capture-canvas {
@@ -41,4 +42,12 @@
 .custom-image{
     height: 375px;
     width: 500px;
+    object-fit: cover;
+}
+
+.custom-image-input,
+#startbutton {
+    position: absolute;
+    top: 24px;
+    left: 24px;
 }

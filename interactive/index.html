@@ -17,6 +17,8 @@
 
                 </video>
             </div>
+
+            <button type="button" id="startbutton">Capture Image</button>
         </div>
         <div class="grid-item">
             <canvas id="staticpicture"></canvas>
@@ -26,15 +28,18 @@
         </div>
         <div class="grid-item">
             <img class="custom-image" id="customImageA"></img>
-            <input id="uploadImageA" type="file" accept=".jpg, .jpeg, .png"></input>
+            <input class="custom-image-input" id="uploadImageA" type="file" accept=".jpg, .jpeg, .png"></input>
         </div>
-        <div class="grid-item">4</div>
+        <div class="grid-item">
+            <img class="custom-image" id="customImageB"></img>
+            <input class="custom-image-input" id="uploadImageB" type="file" accept=".jpg, .jpeg, .png"></input>
+        </div>
     </div>
-
-    <button type="button" id="startbutton">Capture Image</button>
 </body>
 <script>
     const input = document.getElementById('uploadImageA');;
+    const input2 = document.getElementById('uploadImageB');;
+
     //input.addEventListener('change', readURL(this));
     input.onchange = function (event) {
         console.log(input.files);
@@ -47,6 +52,20 @@
             }
 
             reader.readAsDataURL(input.files[0]);
+        }
+    };
+
+    input2.onchange = function (event) {
+        console.log(input2.files);
+
+        if (input2.files && input2.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('customImageB').setAttribute('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input2.files[0]);
         }
     };
 </script>
