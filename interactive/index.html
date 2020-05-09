@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="capture.js"></script>
+    <script src="upload.js"></script>
     <meta charset="utf-8">
     <title>MeetingShot - Interactive Webcam Capture</title>
 </head>
@@ -23,11 +24,31 @@
                 <img id="photo" alt="The screen capture will appear in this box.">
             </div>
         </div>
-        <div class="grid-item">3</div>
+        <div class="grid-item">
+            <img class="custom-image" id="customImageA"></img>
+            <input id="uploadImageA" type="file" accept=".jpg, .jpeg, .png"></input>
+        </div>
         <div class="grid-item">4</div>
     </div>
 
     <button type="button" id="startbutton">Capture Image</button>
 </body>
+<script>
+    const input = document.getElementById('uploadImageA');;
+    //input.addEventListener('change', readURL(this));
+    input.onchange = function (event) {
+        console.log(input.files);
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('customImageA').setAttribute('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+</script>
 
 </html>

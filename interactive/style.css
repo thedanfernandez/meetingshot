@@ -37,3 +37,8 @@
 #staticpicture {
     display: none;
 }
+
+.custom-image{
+    height: 375px;
+    width: 500px;
+}
