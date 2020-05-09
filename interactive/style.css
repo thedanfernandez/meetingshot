@@ -24,6 +24,7 @@
     border: 1px solid #84a754;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .video-capture-canvas {
@@ -41,8 +42,6 @@
 
 .custom-image {
     height: 375px;
-    width: 500px;
-    object-fit: cover;
     border: #ffffff;
 }
 

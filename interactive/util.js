@@ -1,4 +1,4 @@
-function processInput (context) {
+function processInput(context) {
     if (context.files && context.files[0]) {
         var reader = new FileReader();
 
@@ -11,3 +11,11 @@ function processInput (context) {
         reader.readAsDataURL(context.files[0]);
     }
 };
+
+
+function capture() {
+    html2canvas(document.querySelector("#main-block")).then(canvas => {
+        document.body.appendChild(canvas)
+    })
+}
+
