@@ -14,6 +14,10 @@
         </video>
     </div>
 
+
+    <button type="button" onclick="capture()">Capture Image</button>
+
+    <canvas id="videoCanvas" width="500" height="375"></canvas>
 </body>
 
 <script type="text/javascript">
@@ -24,9 +28,16 @@
             .then(function (stream) {
                 video.srcObject = stream;
             })
-            .catch(function (err0r) {
+            .catch(function (err) {
                 console.log("Something went wrong!");
             });
+    }
+
+    function capture() {
+        var canvas = document.getElementById("videoCanvas");
+        var video = document.getElementById("videoElement");
+        
+        canvas.getContext('2d').drawImage(video, 0, 0);
     }
 </script>
 
