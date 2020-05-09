@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="capture.js"></script>
     <script src="upload.js"></script>
+    <script src="https://kit.fontawesome.com/80d0187199.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>MeetingShot - Interactive Webcam Capture</title>
 </head>
@@ -29,10 +30,12 @@
         <div class="grid-item">
             <img class="custom-image" id="customImageA"></img>
             <input class="custom-image-input" id="uploadImageA" type="file" accept=".jpg, .jpeg, .png"></input>
+            <label for="uploadImageA"><i class="fas fa-camera"></i></label>
         </div>
         <div class="grid-item">
             <img class="custom-image" id="customImageB"></img>
             <input class="custom-image-input" id="uploadImageB" type="file" accept=".jpg, .jpeg, .png"></input>
+            <label for="uploadImageB"><i class="fas fa-camera"></i></label>
         </div>
     </div>
 </body>
@@ -68,6 +71,12 @@
             reader.readAsDataURL(input2.files[0]);
         }
     };
+
+    input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+    input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+
+    input2.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+    input2.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
 </script>
 
 </html>
