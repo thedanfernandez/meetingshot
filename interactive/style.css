@@ -1,11 +1,39 @@
-#container {
-	margin: 0px auto;
-	width: 500px;
-	height: 375px;
-	border: 2px #84a754 solid;
+.video-container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
 }
-#videoElement {
-	width: 500px;
-	height: 375px;
-	background-color: #666;
+
+#video {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-column-gap: 0px;
+    background-color: #ffffff;
+}
+
+.grid-item {
+    width: 500px;
+    height: 375px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #84a754;
+    text-align: center;
+}
+
+.video-capture-canvas {
+    object-fit: scale-down;
+}
+
+#photo {
+    width: 500px;
+    height: 375px;
+}
+
+#staticpicture {
+    display: none;
 }

@@ -3,42 +3,31 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="capture.js"></script>
     <meta charset="utf-8">
     <title>MeetingShot - Interactive Webcam Capture</title>
 </head>
 
 <body>
-    <div id="container">
-        <video autoplay="true" id="videoElement">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div id="videoDiv" class="container">
+                <video autoplay="true" id="video">
 
-        </video>
+                </video>
+            </div>
+        </div>
+        <div class="grid-item">
+            <canvas id="staticpicture"></canvas>
+            <div class="output">
+                <img id="photo" alt="The screen capture will appear in this box.">
+            </div>
+        </div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
     </div>
 
-
-    <button type="button" onclick="capture()">Capture Image</button>
-
-    <canvas id="videoCanvas" width="500" height="375"></canvas>
+    <button type="button" id="startbutton">Capture Image</button>
 </body>
-
-<script type="text/javascript">
-    var video = document.querySelector("#videoElement");
-
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                video.srcObject = stream;
-            })
-            .catch(function (err) {
-                console.log("Something went wrong!");
-            });
-    }
-
-    function capture() {
-        var canvas = document.getElementById("videoCanvas");
-        var video = document.getElementById("videoElement");
-        
-        canvas.getContext('2d').drawImage(video, 0, 0);
-    }
-</script>
 
 </html>
