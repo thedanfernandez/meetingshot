@@ -43,6 +43,9 @@
 .custom-image {
     height: 375px;
     border: #ffffff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 #startbutton {
@@ -81,6 +84,9 @@
     color: red;
 }
 
+.hidden-custom-image{
+    visibility: hidden;
+}
 /* .custom-image-input:focus + label,
 .custom-image-input.has-focus + label {
     outline: 1px dotted #000;

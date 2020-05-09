@@ -14,6 +14,7 @@
 <body>
     <div id="main-block" class="grid-container">
         <div class="grid-item">
+            <img class="custom-image hidden-custom-image" id="camera-placeholder"></img>
             <div id="videoDiv" class="container">
                 <video autoplay="true" id="video">
 
@@ -29,17 +30,17 @@
             </div>
         </div>
         <div class="grid-item">
-            <img class="custom-image" id="customImageA"></img>
+            <img class="custom-image"></img>
             <input class="custom-image-input" id="uploadImageA" type="file" accept=".jpg, .jpeg, .png" onchange="processInput(this)"></input>
             <label data-html2canvas-ignore="true" for="uploadImageA"><i class="fas fa-camera"></i></label>
         </div>
         <div class="grid-item">
-            <img class="custom-image" id="customImageB"></img>
+            <img class="custom-image"></img>
             <input class="custom-image-input" id="uploadImageB" type="file" accept=".jpg, .jpeg, .png" onchange="processInput(this)"></input>
             <label data-html2canvas-ignore="true" for="uploadImageB"><i class="fas fa-camera"></i></label>
         </div>
     </div>
 
-    <input type="button" onclick="capture()"></input>
+    <input type="button" onclick="capture()" value="Capture Final"></input>
 </body>
 </html>
