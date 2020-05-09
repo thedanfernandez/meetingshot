@@ -1,13 +1,13 @@
-function readURL(input) {
-    console.log(input.files);
-
-    if (input.files && input.files[0]) {
+function processInput (context) {
+    if (context.files && context.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            document.getElementById('customImageA').setAttribute('src', e.target.result);
+            var parentDiv = context.parentNode;
+            var targetImage = parentDiv.querySelector('.custom-image');
+            targetImage.setAttribute('src', e.target.result);
         }
 
-        reader.readAsDataURL(input.files[0]);
+        reader.readAsDataURL(context.files[0]);
     }
-}
+};
