@@ -1,42 +1,36 @@
 // Source: https://github.com/mdn/samples-server/blob/master/s/webrtc-capturestill/capture.js
 
-var width = 320;    // We will scale the photo width to this
-var height = 0;     // This will be computed based on the input stream
-
-// |streaming| indicates whether or not we're currently streaming
-// video from the camera. Obviously, we start at false.
+var width = 320;
+var height = 0;
 
 var streaming = false;
-
-// The various HTML elements we need to configure or control. These
-// will be set by the startup() function.
 
 var video = null;
 var canvas = null;
 var photo = null;
 var startbutton = null;
 
-function loadCamera() {
-    // The width and height of the captured photo. We will set the
-    // width to the value defined here, but the height will be
-    // calculated based on the aspect ratio of the input stream.
-
-    startup();
-
-    // // Set up our event listener to run the startup process
-    // // once loading is complete.
-    // window.addEventListener('load', startup, false);
+// Loads the camera. The containerDiv argument tells us where the container is where we need to look up elements for camera
+// stream ingestion.
+function loadCamera(container, presetWidth) {
+    width = presetWidth;
+    console.log(container)
+    startup(container);
 };
 
-function startup() {
-    video = document.getElementById('video');
-    canvas = document.getElementById('staticpicture');
-    photo = document.getElementById('photo');
+function startup(container) {
+    video = container.querySelector('.video-streamer');
+    canvas = container.querySelector('.video-canvas');
+    photo = container.querySelector('.video-snapshot');
     startbutton = document.getElementById('startbutton');
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(function (stream) {
-            video.srcObject = stream;
+            if (typeof video.srcObject == "object") {
+                video.srcObject = stream;
+            } else {
+                video.src = window.URL.createObjectURL(stream)
+            }
             video.play();
         })
         .catch(function (err) {
@@ -100,4 +94,25 @@ function takepicture() {
     } else {
         clearphoto();
     }
+}
+
+function stopCamera(container) {
+    video = container.querySelector('.video-streamer');
+
+    video.srcObject = null;
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(
+        function (stream) {
+            console.log(stream.getTracks().length);
+
+            stream.getTracks().forEach(function (track) { 
+                track.stop();
+            });
+
+            console.log(stream.getTracks().length);
+        }).catch(
+            function (error) {
+                console.log('getUserMedia() error', error);
+            });
+
 }

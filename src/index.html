@@ -32,8 +32,8 @@
             </select>
             <input type="checkbox" id="showNames" name="showNames" checked />
             <label for="showNames">Show Attendee Names</label>
-            <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
-            <label for="enableWebCam">Enable My Webcam</label>
+            <!-- <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
+            <label for="enableWebCam">Enable My Webcam</label> -->
             <br />
         </div>
     </section>
@@ -47,7 +47,21 @@
                         &times;
                     </span>
                     <h3>Select an attendee</h3>
-                    <div id="gallery"></div>
+                    <div id="gallery">
+                        <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
+                            <div class="modal-video-bucket">
+                                <canvas id="staticpicture" class="hidden-custom-image video-canvas"></canvas>
+                                <img class="custom-image hidden-custom-image video-snapshot" id="photo"
+                                    alt="The screen capture will appear in this box.">
+                                <div id="videoDiv">
+                                    <video autoplay="true" id="video" class='video-streamer'>
+
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-text">Webcam</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Meeting Grid  -->

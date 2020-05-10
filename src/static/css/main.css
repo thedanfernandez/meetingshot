@@ -49,6 +49,7 @@ body {
 
 .item-image {
   width: 320px;
+  height: 182px;
   object-fit: contain;
 }
 
@@ -135,12 +136,12 @@ label {
 }
 
 #video {
-  width: 320px;
-  background-color: #666;
+  background-color: #000;
 }
 
 #staticpicture {
   display: none;
+  height: 182px;
 }
 
 .hidden-custom-image {
@@ -149,8 +150,28 @@ label {
 
 .custom-image {
   width: 320px;
+  height: 182px;
   border: #ffffff;
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+.modal-video-bucket{
+  height: 135px;
+  overflow: hidden;
+}
+
+.main-page-video{
+  width: 320px;
+  border: none;
+}
+
+.main-page-video-container {
+  height: 182px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  border: none;
 }
