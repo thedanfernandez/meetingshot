@@ -135,7 +135,6 @@ label {
 }
 
 #video {
-  width: 320px;
   background-color: #666;
 }
 
@@ -153,4 +152,9 @@ label {
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+.modal-video-bucket{
+  height: 135px;
+  overflow: hidden;
 }

@@ -27,7 +27,7 @@ const modal = document.getElementById("updateScreen");
 function showModal(imgToUpdate) {
   modal.style.display = "block";
   imageToUpdate = imgToUpdate;
-  loadCamera("camera-modal");
+  loadCamera("camera-modal", 240);
   console.log("Open modal.")
 }
 
