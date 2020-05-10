@@ -27,10 +27,14 @@ const modal = document.getElementById("updateScreen");
 function showModal(imgToUpdate) {
   modal.style.display = "block";
   imageToUpdate = imgToUpdate;
+  loadCamera("camera-modal");
+  console.log("Open modal.")
 }
 
 function hideModal() {
   modal.style.display = "none";
+  stopCamera("camera-modal");
+  console.log("Close modal.");
 }
 
 function updateAttendee(newimg) {
