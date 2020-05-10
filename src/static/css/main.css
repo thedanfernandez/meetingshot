@@ -60,7 +60,6 @@ body {
   display: block;
   border-radius: 5px;
   border: 0.5px solid #d9d9d9;
-  width: 240px;
   min-height: 140px;
   background: white;
   position: relative;
@@ -71,6 +70,7 @@ body {
   margin-top: 16px;
   width: 240px;
   height: 160px;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -80,8 +80,6 @@ body {
 .card > img {
   position: relative;
   display: block;
-  width: 100%;
-  height: 60%;
   border-radius: 4px 4px 0px 0px;
   width: 240px;
   height: 135px;
