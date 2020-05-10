@@ -1,12 +1,12 @@
 html,
-body,
-.grid-container {
+body {
   height: 100%;
   margin: 0;
 }
 
 body {
   background-color: #000000;
+  font: 16px sans-serif;
 }
 
 .meeting-details {
@@ -26,19 +26,44 @@ body {
   padding-bottom: 100px;
 }
 
-.grid-container-2row {
-  display: grid;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 180px 180px;
+/*****************
+  CSS Grid Styles
+*****************/
+.grid {
   gap: 0px 0px;
-  grid-template-areas: ". . ." ". . .";
   justify-content: center;
+  height: 100%;
+  margin: 0;
 }
 
-.grid-container-border * {
+.grid-border * {
   border: 2px solid black;
   position: relative;
 }
+
+/* 3 row x 3 (content) column grid for 5-9 attendees */
+/* content spans 2 rows */
+.grid-3row-3col {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 180px 180px 180px;
+}
+
+/* 2 row x 2 (content) column for 3-4 attendees */
+.grid-2row-2col {
+  display: grid;
+  grid-template-columns: 240px 240px 240px 240px;
+  grid-template-rows: 270px 270px;
+}
+
+/* 1 row x 1 (content) column for 1-2 attendees*/
+.grid-1row-2col {
+  display: grid;
+  grid-template-columns: 480px 480px;
+  grid-template-rows: 270px 270px;
+}
+
+/* generic cell */
 
 .item {
   grid-column: span 2;
@@ -51,6 +76,60 @@ body {
   width: 320px;
   height: 182px;
   object-fit: cover;
+}
+
+.cell {
+  grid-column: span 2;
+  max-width: 480px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.cell-image {
+  width: 320px;
+  height: 182px;
+  object-fit: contain;
+}
+
+.cell-fit {
+  object-fit: contain;
+  overflow: hidden;
+}
+
+/* 8-attendee grid cell 7 */
+.cell8g-7 {
+  grid-column: 2 / span 2;
+}
+
+/* 8-attendee grid cell 8 */
+.cell8g-8 {
+  grid-column: 4 / span 2;
+}
+
+/* 7-attendee grid cell 7 */
+.cell7g-7 {
+  grid-column: 3 / span 2;
+}
+
+/* 5-attendee grid cell 4 */
+.cell5g-4 {
+  grid-column: 2 / span 2;
+}
+
+/* 5-attendee grid cell 5 */
+.cell5g-5 {
+  grid-column: 4 / span 2;
+}
+
+/* 3-attendee grid, cell 4 */
+.cell3g-4 {
+  grid-column: 2 / span 2;
+}
+
+/* 1-attendee grid cell 1 */
+.cell1g-1 {
+  grid-column: span 4;
+  grid-row: span 4;
 }
 
 /* 
@@ -97,7 +176,6 @@ body {
 }
 
 body {
-  font: 16px sans-serif;
 }
 
 * {
@@ -155,12 +233,12 @@ label {
   left: 0px;
 }
 
-.modal-video-bucket{
+.modal-video-bucket {
   height: 135px;
   overflow: hidden;
 }
 
-.main-page-video{
+.main-page-video {
   width: 320px;
   border: none;
 }
