@@ -68,7 +68,7 @@ body {
   margin-right: 16px;
   margin-top: 16px;
   width: 240px;
-  height: 100px;
+  height: 160px;
 }
 
 .card:hover {
@@ -82,13 +82,15 @@ body {
   height: 60%;
   border-radius: 4px 4px 0px 0px;
   width: 240px;
-  height: 100px;
+  height: 135px;
   cursor: pointer;
+  object-fit: contain;
 }
 
 .card-text {
   position: relative;
-  margin-top: 12px;
+  margin-top: 4px;
+  font-weight: bold;
   text-align: center;
   text-overflow: ellipsis;
   border-radius: 0px 0px 6px 6px;
@@ -105,8 +107,8 @@ body {
   top: 25%;
   width: 60%;
   height: 60%;
-  overflow: auto;
   background-color: #fefefe;
+  overflow: auto;
 }
 
 .modal-content {

@@ -53,7 +53,7 @@ function loadGalleryCards() {
         <img
             onclick="javascript:updateAttendee(this);"
             src="${a.path}" />
-        <div class="card_text">
+        <div class="card-text">
             ${a.name}
         </div>
     </div>`;
