@@ -1,0 +1,28 @@
+/* 
+  Modal Styles
+*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 25%;
+  top: 25%;
+  width: 60%;
+  height: 60%;
+  overflow: auto;
+  background-color: #fefefe;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 3% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
