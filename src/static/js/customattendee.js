@@ -1,4 +1,4 @@
-var imageToUpdate = "";
+var updateContext = "";
 
 function loadMeetingAttendees(attendeeCount) {
   //assuming no querystring params to rehydrate
@@ -11,7 +11,7 @@ function loadMeetingAttendees(attendeeCount) {
   for (let i = 0; i < 6; i++) {
     let attendeeHtml = `<div class="item">
             <img
-              onclick="javascript:showModal(this);"
+              onclick="javascript:showModal(this.parentNode);"
               class="item-image"
               src="${galleryAttendees[i].path}"
             />
@@ -24,11 +24,10 @@ Modal Attendee Gallery
 */
 const modal = document.getElementById("updateScreen");
 
-function showModal(imgToUpdate) {
+function showModal(context) {
   modal.style.display = "block";
-  imageToUpdate = imgToUpdate;
+  updateContext = context;
   loadCamera("camera-modal", 240);
-  console.log("Open modal.")
 }
 
 function hideModal() {
@@ -37,9 +36,9 @@ function hideModal() {
   console.log("Close modal.");
 }
 
-function updateAttendee(newimg) {
-  console.log(newimg.src);
-  imageToUpdate.src = newimg.src;
+function updateAttendee(newImage) {
+  var targetImage = updateContext.querySelector('.item-image');
+  targetImage.src = newImage.src;
   hideModal();
 }
 
