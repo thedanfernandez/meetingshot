@@ -1,6 +1,4 @@
-//load events
-window.addEventListener("load", loadMeetingAttendees, false);
-window.addEventListener("load", loadGalleryCards, false);
+
 
 var imageToUpdate = "";
 

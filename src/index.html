@@ -9,9 +9,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
 
-    <script async type="text/javascript" src="static/js/customattendee.js"></script>
-    <script async type="text/javascript" src="static/js/attendee.js"></script>
-
     <title>MeetingShot - Faux Meeting Screenshot Generator</title>
 </head>
 
@@ -35,6 +32,8 @@
             </select>
             <input type="checkbox" id="showNames" name="showNames" checked />
             <label for="showNames">Show Attendee Names</label>
+            <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
+            <label for="enableWebCam">Enable My Webcam</label>
             <br />
         </div>
     </section>
@@ -56,5 +55,10 @@
         </div>
     </main>
 </body>
+
+<script async type="text/javascript" src="static/js/camera.js"></script>
+<script async type="text/javascript" src="static/js/customattendee.js"></script>
+<script async type="text/javascript" src="static/js/attendee.js"></script>
+<script async type="text/javascript" src="static/js/core.js"></script>
 
 </html>
