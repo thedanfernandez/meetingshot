@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.1/build/pure-min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="static/css/customattendee.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="static/css/main.css"
+    />
     <title>MeetingShot - Faux Meeting Screenshot Generator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="background">
-        <nav>Nav goes here</nav>
-        <h1>Create a Faux Meeting Screenshot</h1>
-        <div class="meeting-details">
-            <h2>Meeting Details</h2>
-            <label for="attendeeCount">Number of Attendees:</label>
-            <select id="attendeeCount" name="attendeeCount">
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-                <option value="4">5</option>
-                <option value="5">6</option>
-                <option value="6">7</option>
-                <option value="7">8</option>
-                <option value="8">9</option>
-            </select>
-            <input type="checkbox" id="showNames" name="showNames" checked />
-            <label for="showNames">Show Attendee Names</label>
-            <!-- <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
+      <nav>Nav goes here</nav>
+      <h1>Create a Faux Meeting Screenshot</h1>
+      <div class="meeting-details">
+        <h2>Meeting Details</h2>
+        <label for="attendeeCount">Number of Attendees:</label>
+        <select id="attendeeCount" name="attendeeCount">
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+          <option value="5">6</option>
+          <option value="6">7</option>
+          <option value="7">8</option>
+          <option value="8">9</option>
+        </select>
+        <input type="checkbox" id="showNames" name="showNames" checked />
+        <label for="showNames">Show Attendee Names</label>
+        <!-- <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
             <label for="enableWebCam">Enable My Webcam</label> -->
-            <br />
-        </div>
+        <br />
+      </div>
     </section>
 
     <main>
-        <div class="background2">
-            <!-- Modal Gallery  -->
-            <div class="modal" id="updateScreen">
-                <div class="modal-content">
-                    <span class="modal-close" onclick="javascript:hideModal();">
-                        &times;
-                    </span>
-                    <h3>Select an attendee</h3>
-                    <div id="gallery">
-                        <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
-                            <div class="modal-video-bucket">
-                                <canvas id="staticpicture" class="hidden-custom-image video-canvas"></canvas>
-                                <img class="custom-image hidden-custom-image video-snapshot" id="photo"
-                                    alt="The screen capture will appear in this box.">
-                                <div id="videoDiv">
-                                    <video autoplay="true" id="video" class='video-streamer'>
-
-                                    </video>
-                                </div>
-                            </div>
-                            <div class="card-text">Webcam</div>
-                        </div>
-                    </div>
+      <div class="background2">
+        <!-- Modal Gallery  -->
+        <div class="modal" id="updateScreen">
+          <div class="modal-content">
+            <span class="modal-close" onclick="javascript:hideModal();">
+              &times;
+            </span>
+            <h3>Select an attendee</h3>
+            <div id="gallery">
+              <div
+                id="camera-modal"
+                class="card"
+                onclick="updateAttendeeWebStream(updateContext);"
+              >
+                <div class="modal-video-bucket">
+                  <canvas
+                    id="staticpicture"
+                    class="hidden-custom-image video-canvas"
+                  ></canvas>
+                  <img
+                    class="custom-image hidden-custom-image video-snapshot"
+                    id="photo"
+                    alt="The screen capture will appear in this box."
+                  />
+                  <div id="videoDiv">
+                    <video
+                      autoplay="true"
+                      id="video"
+                      class="video-streamer"
+                    ></video>
+                  </div>
                 </div>
+                <div class="card-text">Webcam</div>
+              </div>
             </div>
-            <!-- Meeting Grid  -->
-            <div id="meetingGrid" class="grid-container-2row grid-container-border"></div>
+          </div>
         </div>
+        <!-- Meeting Grid  -->
+        <div
+          id="meetingGrid"
+          class="grid-container-2row grid-container-border"
+        ></div>
+      </div>
     </main>
-</body>
+  </body>
 
-<script async type="text/javascript" src="static/js/camera.js"></script>
-<script async type="text/javascript" src="static/js/customattendee.js"></script>
-<script async type="text/javascript" src="static/js/attendee.js"></script>
-<script async type="text/javascript" src="static/js/core.js"></script>
-
+  <script async type="text/javascript" src="static/js/camera.js"></script>
+  <script
+    async
+    type="text/javascript"
+    src="static/js/customattendee.js"
+  ></script>
+  <script async type="text/javascript" src="static/js/attendee.js"></script>
+  <script async type="text/javascript" src="static/js/core.js"></script>
 </html>
