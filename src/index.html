@@ -59,7 +59,11 @@
                             <div class="card-text">Webcam</div>
                         </div>
                         <div id="custom-image-modal" class="card" onclick="">
+                            <label class="custom-image-label" for="customImageInput">
                             <img src="static/images/custom-image.png">
+                            </label>
+                            <input class="custom-image-input" id="customImageInput" type="file"
+                                accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
                             <div class="card-text">Custom Image</div>
                         </div>
                     </div>
