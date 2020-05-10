@@ -1,147 +1,156 @@
-html, body, .grid-container {
-    height: 100%;
-    margin: 0;
+html,
+body,
+.grid-container {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .meeting-details {
-    background-color: #ffffff;
-    border: 1px;
-    border-bottom: slategray;
-    border-bottom-style: dotted;
-    padding: 20px 20px 20px 20px;
+  background-color: #ffffff;
+  border: 1px;
+  border-bottom: slategray;
+  border-bottom-style: dotted;
+  padding: 20px 20px 20px 20px;
 }
 
 .background {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .background2 {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .grid-container-2row {
-    display: grid;
-    grid-template-columns: 160px 160px 160px 160px 160px 160px;
-    grid-template-rows: 180px 180px;
-    gap: 0px 0px;
-    grid-template-areas: ". . ." ". . .";
-    justify-content: center;
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 180px 180px;
+  gap: 0px 0px;
+  grid-template-areas: ". . ." ". . .";
+  justify-content: center;
 }
 
 .grid-container-border * {
-    border: 2px solid black;
-    position: relative;
+  border: 2px solid black;
+  position: relative;
 }
 
 .item {
-    grid-column: span 2;
-    max-width: 480px;
-    object-fit: contain;
-    overflow: hidden;
+  grid-column: span 2;
+  max-width: 480px;
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .item-image {
-    width: 320px;
-    object-fit: contain;
+  width: 320px;
+  object-fit: contain;
 }
 
 /* 
   Card Styles
  */
-
 .card {
-    display: block;
-    border-radius: 5px;
-    border: 0.5px solid #d9d9d9;
-    width: 240px;
-    min-height: 140px;
-    background: white;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    float: left;
-    margin-right: 16px;
-    margin-top: 16px;
-    width: 240px;
-    height: 100px;
+  display: block;
+  border-radius: 5px;
+  border: 0.5px solid #d9d9d9;
+  width: 240px;
+  min-height: 140px;
+  background: white;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  float: left;
+  margin-right: 16px;
+  margin-top: 16px;
+  width: 240px;
+  height: 160px;
 }
 
 .card:hover {
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
 }
 
-.card>img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 60%;
-    border-radius: 4px 4px 0px 0px;
-    width: 240px;
-    height: 100px;
-    cursor: pointer;
+.card > img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60%;
+  border-radius: 4px 4px 0px 0px;
+  width: 240px;
+  height: 135px;
+  cursor: pointer;
+  object-fit: contain;
 }
 
 .card-text {
-    position: relative;
-    margin-top: 12px;
-    text-align: center;
-    text-overflow: ellipsis;
-    border-radius: 0px 0px 6px 6px;
+  position: relative;
+  margin-top: 4px;
+  font-weight: bold;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-radius: 0px 0px 6px 6px;
 }
 
 body {
-    font: 16px sans-serif;
+  font: 16px sans-serif;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, label {
-    color: #34495e;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #34495e;
 }
 
 .l-box {
-    padding: 1em;
+  padding: 1em;
 }
 
 .l-box-lrg {
-    padding: 2em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .is-center {
-    text-align: center;
+  text-align: center;
 }
 
 .footer {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #video {
-    width: 320px;
-    background-color: #666;
+  width: 320px;
+  background-color: #666;
 }
 
 #staticpicture {
-    display: none;
+  display: none;
 }
 
 .hidden-custom-image {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .custom-image {
-    width: 320px;
-    border: #ffffff;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+  width: 320px;
+  border: #ffffff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
