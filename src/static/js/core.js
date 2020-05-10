@@ -28,3 +28,7 @@ checkbox.addEventListener('change', function () {
         // Checkbox is not checked..
     }
 });
+
+function insertWebStream(context){
+
+}
