@@ -27,12 +27,16 @@ const modal = document.getElementById("updateScreen");
 function showModal(context) {
   modal.style.display = "block";
   updateContext = context;
-  loadCamera("camera-modal", 240);
+
+  var container = document.getElementById('camera-modal')
+  loadCamera(container, 240);
 }
 
 function hideModal() {
   modal.style.display = "none";
-  stopCamera("camera-modal");
+
+  var container = document.getElementById('camera-modal')
+  stopCamera(container);
   console.log("Close modal.");
 }
 
@@ -40,6 +44,12 @@ function updateAttendee(newImage) {
   var targetImage = updateContext.querySelector('.item-image');
   targetImage.src = newImage.src;
   hideModal();
+}
+
+function updateAttendeeWebStream(context){
+  console.log(context);
+  hideModal();
+  insertWebStream(context);
 }
 
 function loadGalleryCards() {

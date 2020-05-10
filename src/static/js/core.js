@@ -30,5 +30,17 @@ checkbox.addEventListener('change', function () {
 });
 
 function insertWebStream(context){
+    context.innerHTML = ""
 
+    context.innerHTML = `<div id="webcamContainer" class="main-page-video-container">
+                            <canvas id="staticpicture" class="hidden-custom-image"></canvas>
+                            <img class="custom-image hidden-custom-image" id="photo" alt="The screen capture will appear in this box.">
+                            <div id="videoDiv" class="container">
+                                <video autoplay="true" id="video" class="video-streamer main-page-video">
+
+                                </video>
+                            </div>
+                        </div>`;
+
+    loadCamera(context, 320)
 }

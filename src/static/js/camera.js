@@ -12,15 +12,13 @@ var startbutton = null;
 
 // Loads the camera. The containerDiv argument tells us where the container is where we need to look up elements for camera
 // stream ingestion.
-function loadCamera(containerDiv, presetWidth) {
+function loadCamera(container, presetWidth) {
     width = presetWidth;
-    console.log(width)
-    startup(containerDiv);
+    console.log(container)
+    startup(container);
 };
 
-function startup(containerDiv) {
-    container = document.getElementById(containerDiv);
-
+function startup(container) {
     video = container.querySelector('.video-streamer');
     canvas = container.querySelector('.video-canvas');
     photo = container.querySelector('.video-snapshot');
@@ -98,8 +96,7 @@ function takepicture() {
     }
 }
 
-function stopCamera(containerDiv) {
-    container = document.getElementById(containerDiv);
+function stopCamera(container) {
     video = container.querySelector('.video-streamer');
 
     video.srcObject = null;
