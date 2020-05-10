@@ -1,6 +1,7 @@
 /* 
   Modal Styles
 */
+
 .modal {
   display: none;
   position: fixed;
@@ -27,7 +28,28 @@
   font-weight: bold;
 }
 
-.custom-image-modal{
-  overflow:hidden;
+.custom-image-modal {
+  overflow: hidden;
   object-fit: cover;
+}
+
+.custom-image-input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  width: 240px;
+  height: 135px;
+  display: none;
+}
+
+.custom-image-label {
+  cursor: pointer;
+  height: 135px;
+  display: inherit;
 }

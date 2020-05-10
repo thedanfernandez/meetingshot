@@ -75,7 +75,7 @@ body {
 .item-image {
   width: 320px;
   height: 182px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .cell {

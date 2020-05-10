@@ -51,6 +51,26 @@ function updateAttendeeWebStream(context) {
   insertWebStream(context);
 }
 
+function processCustomImage(context, fileSelector) {
+  if (fileSelector.files && fileSelector.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      context.innerHTML = ""
+
+      context.innerHTML = `<img
+                              onclick="javascript:showModal(this.parentNode);"
+                              class="item-image"
+                              src="${e.target.result}"
+                              />`;
+    }
+
+    reader.readAsDataURL(fileSelector.files[0]);
+  }
+
+  hideModal();
+}
+
 function loadGalleryCards() {
   const gallery = document.getElementById("gallery");
   galleryAttendees.forEach((a) => {
