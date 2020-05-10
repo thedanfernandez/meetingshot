@@ -9,10 +9,10 @@ function loadMeetingAttendees(attendeeCount) {
 
   //TODO: Change to be dynamic
   for (let i = 0; i < 6; i++) {
-    let attendeeHtml = `<div class="item">
+    let attendeeHtml = `<div class="cell">
             <img
               onclick="javascript:showModal(this.parentNode);"
-              class="item-image"
+              class="cell-image"
               src="${galleryAttendees[i].path}"
             />
           </div>`;
@@ -28,14 +28,14 @@ function showModal(context) {
   modal.style.display = "block";
   updateContext = context;
 
-  var container = document.getElementById('camera-modal')
+  var container = document.getElementById("camera-modal");
   loadCamera(container, 240);
 }
 
 function hideModal() {
   modal.style.display = "none";
 
-  var container = document.getElementById('camera-modal')
+  var container = document.getElementById("camera-modal");
   stopCamera(container);
   console.log("Close modal.");
 }
@@ -45,7 +45,7 @@ function updateAttendee(context, newImage) {
   hideModal();
 }
 
-function updateAttendeeWebStream(context){
+function updateAttendeeWebStream(context) {
   console.log(context);
   hideModal();
   insertWebStream(context);

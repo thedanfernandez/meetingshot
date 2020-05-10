@@ -47,6 +47,12 @@ body {
   grid-template-rows: 270px 270px;
 }
 
+.grid-1row-1col {
+  display: grid;
+  grid-template-columns: 960px;
+  grid-template-rows: 540px;
+}
+
 .item {
   grid-column: span 2;
 }
@@ -77,5 +83,5 @@ body {
 
 .item1g-1 {
   grid-column: span 4;
-  grid-row: span 4;
+  grid-row: span 24;
 }
