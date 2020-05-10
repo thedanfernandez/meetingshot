@@ -1,0 +1,124 @@
+html,
+body,
+.grid-container {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #000000;
+}
+
+.meeting-details {
+  background-color: #ffffff;
+  border: 1px;
+  border-bottom: slategray;
+  border-bottom-style: dotted;
+  padding: 20px 20px 20px 20px;
+}
+
+.background {
+  background-color: #ffffff;
+}
+
+.background2 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.grid-container-2row {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 180px 180px;
+  gap: 0px 0px;
+  grid-template-areas: ". . ." ". . .";
+  justify-content: center;
+}
+
+.grid-container-border * {
+  border: 2px solid black;
+  position: relative;
+}
+
+.item {
+  grid-column: span 2;
+  max-width: 480px;
+  object-fit: contain;
+}
+
+.item-image {
+  width: 320px;
+  object-fit: contain;
+}
+
+/* 
+  Card Styles
+ */
+.card {
+  display: block;
+  border-radius: 5px;
+  border: 0.5px solid #d9d9d9;
+  width: 240px;
+  min-height: 140px;
+  background: white;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  float: left;
+  margin-right: 16px;
+  margin-top: 16px;
+  width: 240px;
+  height: 100px;
+}
+
+.card:hover {
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+}
+
+.card > img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60%;
+  border-radius: 4px 4px 0px 0px;
+  width: 240px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.card-text {
+  position: relative;
+  margin-top: 12px;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-radius: 0px 0px 6px 6px;
+}
+
+/* 
+  Modal Styles
+*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 25%;
+  top: 25%;
+  width: 60%;
+  height: 60%;
+  overflow: auto;
+  background-color: #fefefe;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 3% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
