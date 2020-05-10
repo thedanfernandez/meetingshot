@@ -26,3 +26,8 @@
   font-size: 28px;
   font-weight: bold;
 }
+
+.custom-image-modal{
+  overflow:hidden;
+  object-fit: cover;
+}
