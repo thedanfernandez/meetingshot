@@ -1,0 +1,94 @@
+.video-container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+}
+
+#video {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-column-gap: 0px;
+    background-color: #ffffff;
+}
+
+.grid-item {
+    width: 500px;
+    height: 375px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #84a754;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-capture-canvas {
+    object-fit: scale-down;
+}
+
+#photo {
+    width: 500px;
+    height: 375px;
+}
+
+#staticpicture {
+    display: none;
+}
+
+.custom-image {
+    height: 375px;
+    border: #ffffff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#startbutton {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+.custom-image-input{
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    color: transparent;
+    z-index: -1;
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.custom-image-input + label {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.custom-image-input:focus + label,
+.custom-image-input + label:hover {
+    color: red;
+}
+
+.hidden-custom-image{
+    visibility: hidden;
+}
+/* .custom-image-input:focus + label,
+.custom-image-input.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+} */
