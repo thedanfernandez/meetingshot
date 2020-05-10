@@ -40,9 +40,8 @@ function hideModal() {
   console.log("Close modal.");
 }
 
-function updateAttendee(newImage) {
-  var targetImage = updateContext.querySelector('.item-image');
-  targetImage.src = newImage.src;
+function updateAttendee(context, newImage) {
+  setImage(context, newImage.src);
   hideModal();
 }
 
@@ -60,7 +59,7 @@ function loadGalleryCards() {
 
     let galleryHtml = `<div class="card">
         <img
-            onclick="javascript:updateAttendee(this);"
+            onclick="javascript:updateAttendee(updateContext, this);"
             src="${a.path}" />
         <div class="card-text">
             ${a.name}
