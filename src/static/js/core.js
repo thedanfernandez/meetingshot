@@ -23,7 +23,7 @@ function setImage(context, source) {
 
   context.innerHTML = `<img
                             onclick="javascript:showModal(this.parentNode);"
-                            class="item-image"
+                            class="cell-image"
                             src="${source}"
                             />`;
 }
