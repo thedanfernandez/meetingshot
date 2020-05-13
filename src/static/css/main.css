@@ -65,7 +65,7 @@ body {
 
 /* generic cell */
 
-.item {
+/* .item {
   grid-column: span 2;
   max-width: 480px;
   object-fit: contain;
@@ -76,7 +76,7 @@ body {
   width: 320px;
   height: 182px;
   object-fit: cover;
-}
+} */
 
 .cell {
   grid-column: span 2;
@@ -122,7 +122,7 @@ body {
 }
 
 /* 3-attendee grid, cell 4 */
-.cell3g-4 {
+.cell3g-3 {
   grid-column: 2 / span 2;
 }
 

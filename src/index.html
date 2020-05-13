@@ -18,15 +18,15 @@
             <h2>Meeting Details</h2>
             <label for="attendeeCount">Number of Attendees:</label>
             <select id="attendeeCount" name="attendeeCount">
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-                <option value="4">5</option>
-                <option value="5">6</option>
-                <option value="6">7</option>
-                <option value="7">8</option>
-                <option value="8">9</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option selected value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
             </select>
             <input type="checkbox" id="showNames" name="showNames" checked />
             <label for="showNames">Show Attendee Names</label>
@@ -37,7 +37,6 @@
     </section>
 
     <main>
-
         <div class="background2">
             <!-- Modal Gallery  -->
             <div class="modal" id="updateScreen">
@@ -75,9 +74,9 @@
     </main>
 </body>
 
+<script type="text/javascript" src="static/js/attendee.js"></script>
 <script async type="text/javascript" src="static/js/camera.js"></script>
-<script async type="text/javascript" src="static/js/customattendee.js"></script>
-<script async type="text/javascript" src="static/js/attendee.js"></script>
+<script type="text/javascript" src="static/js/customattendee.js"></script>
 <script async type="text/javascript" src="static/js/core.js"></script>
 
 </html>
