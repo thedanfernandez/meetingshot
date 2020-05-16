@@ -60,27 +60,36 @@ attendeeCount.addEventListener("change", (event) => {
 // It's important to use this function to preserve the user's choices for previous
 // images and selections. Otherwise the grid is re-created.
 function setAttendeeConstraint(numberOfAttendees) {
-  const meetingGrid = document.getElementById("meetingGrid");
+  var meetingGrid = document.getElementById("meetingGrid");
   var childCount = meetingGrid.childElementCount;
 
   // We need to reduce child elements.
   if (childCount > numberOfAttendees) {
     var elementsToRemove = childCount - numberOfAttendees;
 
-    for (i = 0; i < elementsToRemove; i++) {
-      meetingGrid.removeChild(meetingGrid.childNodes[childCount - 1 - i])
+    for (iterator = 0; iterator < elementsToRemove; iterator++) {
+      meetingGrid.removeChild(meetingGrid.childNodes[childCount - 1 - iterator])
     }
-  } else if (childCount < numberOfAttendees){ // We need to add meeting attendees.
+  } else if (childCount < numberOfAttendees) { // We need to add meeting attendees.
     var elementsToAdd = numberOfAttendees - childCount;
 
-    for (i = 0; i < elementsToAdd; i++){
-      var randomAttendee = Math.floor(Math.random() * Math.floor(galleryAttendees.length - 1))
+    console.log("To add: " + elementsToAdd);
+
+    for (iterator = 0; iterator < elementsToAdd; iterator++) {
+      console.log("Adding attendee, iteration " + iterator)
+      var randomAttendee = 0;
+      var imagePath = '';
+
+      do {
+        randomAttendee = getRandomAttendeeId();
+        imagePath = galleryAttendees[randomAttendee].path;
+      } while (imageExistsInGrid(imagePath));
 
       let attendeeHtml = `<div class="cell">
                             <img
                               onclick="javascript:showModal(this.parentNode);"
                               class="cell-image"
-                              src="${galleryAttendees[randomAttendee].path}"
+                              src="${imagePath}"
                             />
                           </div>`;
 
@@ -89,6 +98,31 @@ function setAttendeeConstraint(numberOfAttendees) {
   }
 
   reStyleMeetingGrid();
+}
+
+function getRandomAttendeeId() {
+  var generatedNumber = Math.floor(Math.random() * Math.floor(galleryAttendees.length))
+  return generatedNumber;
+}
+
+// Checks if an image already exists in the grid. This is important when we recreate the grid
+// because ideally we don't want to duplicate an image in the attendee list.
+function imageExistsInGrid(path) {
+  var meetingGrid = document.getElementById("meetingGrid");
+
+  for (i = 0; i < meetingGrid.childElementCount; i++) {
+    var element = meetingGrid.childNodes[i]
+    var photoElement = element.querySelector('.cell-image');
+
+    var photo = photoElement.getAttribute('src')
+
+    var match = (photo === path)
+    if (match === true) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 // Switch style based on # of attendees
