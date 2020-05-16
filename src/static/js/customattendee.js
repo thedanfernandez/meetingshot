@@ -207,6 +207,8 @@ function processCustomImage(context, fileSelector) {
     reader.readAsDataURL(fileSelector.files[0]);
   }
 
+  stopCamera(context);
+
   hideModal();
 }
 
