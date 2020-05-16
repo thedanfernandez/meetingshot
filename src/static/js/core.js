@@ -27,3 +27,15 @@ function setImage(context, source) {
                             src="${source}"
                             />`;
 }
+
+var attendeeCount = document.getElementById("attendeeCount");
+
+function loadDefaultMeetingAttendees(attendeeCount) {
+  attendeeCount.value = attendeeCount
+  loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
+}
+
+attendeeCount.addEventListener("change", (event) => {
+  //createGrid(event.target.value);
+  setAttendeeConstraint(event.target.value);
+});

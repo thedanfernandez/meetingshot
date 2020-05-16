@@ -46,17 +46,6 @@ function loadMeetingAttendees(attendees) {
   }
 }
 
-function loadDefaultMeetingAttendees(attendeeCount) {
-  loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
-}
-
-const attendeeCount = document.getElementById("attendeeCount");
-
-attendeeCount.addEventListener("change", (event) => {
-  //createGrid(event.target.value);
-  setAttendeeConstraint(event.target.value);
-});
-
 // Switch style based on # of attendees
 function reStyleMeetingGrid() {
   console.log("Re-styling...")
