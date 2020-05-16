@@ -180,6 +180,7 @@ function hideModal() {
 }
 
 function updateAttendee(context, newImage) {
+  stopCamera(context);
   setImage(context, newImage.src);
   hideModal();
 }
@@ -195,6 +196,8 @@ function processCustomImage(context, fileSelector) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
+      stopCamera(context);
+
       context.innerHTML = "";
 
       context.innerHTML = `<img
@@ -205,9 +208,8 @@ function processCustomImage(context, fileSelector) {
     };
 
     reader.readAsDataURL(fileSelector.files[0]);
-  }
 
-  stopCamera(context);
+  }
 
   hideModal();
 }
