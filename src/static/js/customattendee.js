@@ -53,22 +53,63 @@ function loadDefaultMeetingAttendees(attendeeCount) {
 const attendeeCount = document.getElementById("attendeeCount");
 
 attendeeCount.addEventListener("change", (event) => {
-  createGrid(event.target.value);
+  //createGrid(event.target.value);
+  setAttendeeConstraint(event.target.value);
 });
 
-function createGrid(value) {
+// It's important to use this function to preserve the user's choices for previous
+// images and selections. Otherwise the grid is re-created.
+function setAttendeeConstraint(numberOfAttendees) {
   const meetingGrid = document.getElementById("meetingGrid");
+  var childCount = meetingGrid.childElementCount;
 
-  //switch style based on # of attendees
-  if (value >= 5 && value <= 9) {
+  // We need to reduce child elements.
+  if (childCount > numberOfAttendees) {
+    var elementsToRemove = childCount - numberOfAttendees;
+
+    for (i = 0; i < elementsToRemove; i++) {
+      meetingGrid.removeChild(meetingGrid.childNodes[childCount - 1 - i])
+    }
+  } else if (childCount < numberOfAttendees){ // We need to add meeting attendees.
+    var elementsToAdd = numberOfAttendees - childCount;
+
+    for (i = 0; i < elementsToAdd; i++){
+      var randomAttendee = Math.floor(Math.random() * Math.floor(galleryAttendees.length - 1))
+
+      let attendeeHtml = `<div class="cell">
+                            <img
+                              onclick="javascript:showModal(this.parentNode);"
+                              class="cell-image"
+                              src="${galleryAttendees[randomAttendee].path}"
+                            />
+                          </div>`;
+
+      meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
+    }
+  }
+
+  reStyleMeetingGrid();
+}
+
+// Switch style based on # of attendees
+function reStyleMeetingGrid() {
+  var meetingGrid = document.getElementById("meetingGrid");
+  var childCount = meetingGrid.childElementCount;
+
+  if (childCount >= 5 && childCount <= 9) {
     meetingGrid.className = "grid grid-border grid-3row-3col";
-  } else if (value >= 3 && value <= 4) {
+  } else if (childCount >= 3 && childCount <= 4) {
     meetingGrid.className = "grid grid-border grid-2row-2col";
-  } else if (value >= 1 && value <= 2) {
+  } else if (childCount >= 1 && childCount <= 2) {
     meetingGrid.className = "grid grid-border grid-1row-2col";
   }
+}
+
+function createGrid(value) {
   console.log("value=" + value);
   loadDefaultMeetingAttendees(value);
+
+  reStyleMeetingGrid();
 }
 
 /* 
