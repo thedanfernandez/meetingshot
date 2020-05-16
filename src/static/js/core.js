@@ -6,7 +6,7 @@ function insertWebStream(context) {
   context.innerHTML = "";
 
   context.innerHTML = `<div id="webcamContainer" class="main-page-video-container" onclick="javascript:showModal(this.parentNode);">
-                            <canvas id="staticpicture" class="hidden-custom-image"></canvas>
+                            <canvas class="video-canvas hidden-custom-image"></canvas>
                             <img class="custom-image hidden-custom-image" id="photo" alt="The screen capture will appear in this box.">
                             <div id="videoDiv" class="container">
                                 <video autoplay="true" class="video-streamer main-page-video">
@@ -27,3 +27,15 @@ function setImage(context, source) {
                             src="${source}"
                             />`;
 }
+
+var attendeeCount = document.getElementById("attendeeCount");
+
+function loadDefaultMeetingAttendees(attendeeCount) {
+  attendeeCount.value = attendeeCount
+  loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
+}
+
+attendeeCount.addEventListener("change", (event) => {
+  //createGrid(event.target.value);
+  setAttendeeConstraint(event.target.value);
+});

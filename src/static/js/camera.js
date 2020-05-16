@@ -8,7 +8,6 @@ var streaming = false;
 var video = null;
 var canvas = null;
 var photo = null;
-var startbutton = null;
 
 // Loads the camera. The containerDiv argument tells us where the container is where we need to look up elements for camera
 // stream ingestion.
@@ -22,7 +21,6 @@ function startup(container) {
     video = container.querySelector('.video-streamer');
     canvas = container.querySelector('.video-canvas');
     photo = container.querySelector('.video-snapshot');
-    startbutton = document.getElementById('startbutton');
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(function (stream) {
@@ -56,11 +54,6 @@ function startup(container) {
         }
     }, false);
 
-    startbutton.addEventListener('click', function (ev) {
-        takepicture();
-        ev.preventDefault();
-    }, false);
-
     clearphoto();
 }
 
@@ -68,6 +61,8 @@ function startup(container) {
 // captured.
 
 function clearphoto() {
+    //video-canvas 
+    // var canvas = container.querySelector('.video-canvas');
     var context = canvas.getContext('2d');
     context.fillStyle = "#AAA";
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -83,6 +78,7 @@ function clearphoto() {
 // other changes before drawing it.
 
 function takepicture() {
+    // var canvas = container.querySelector('.video-canvas');
     var context = canvas.getContext('2d');
     if (width && height) {
         canvas.width = width;
@@ -97,15 +93,20 @@ function takepicture() {
 }
 
 function stopCamera(container) {
+    console.log("Stopping the camera.");
+
     video = container.querySelector('.video-streamer');
+
+    console.log(video);
 
     video.srcObject = null;
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(
+    navigator.mediaDevices.getUserMedia({ video: true }).then(
         function (stream) {
             console.log(stream.getTracks().length);
 
-            stream.getTracks().forEach(function (track) { 
+            stream.getTracks().forEach(function (track) {
+                console.log("Found a stream that needs to be stopped.")
                 track.stop();
             });
 
