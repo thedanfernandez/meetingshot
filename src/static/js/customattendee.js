@@ -68,7 +68,15 @@ function setAttendeeConstraint(numberOfAttendees) {
     var elementsToRemove = childCount - numberOfAttendees;
 
     for (iterator = 0; iterator < elementsToRemove; iterator++) {
-      meetingGrid.removeChild(meetingGrid.childNodes[childCount - 1 - iterator])
+      var elementToRemove = meetingGrid.childNodes[childCount - 1 - iterator];
+      var videoContainer = elementToRemove.querySelector('.main-page-video-container');
+
+      if (videoContainer){
+        console.log("Need to stop the camera.");
+        stopCamera(videoContainer);
+      }
+
+      meetingGrid.removeChild(elementToRemove);
     }
   } else if (childCount < numberOfAttendees) { // We need to add meeting attendees.
     var elementsToAdd = numberOfAttendees - childCount;

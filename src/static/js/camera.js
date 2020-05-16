@@ -97,15 +97,19 @@ function takepicture() {
 }
 
 function stopCamera(container) {
+    console.log("Stopping the camera.");
+
     video = container.querySelector('.video-streamer');
 
+    console.log(video);
+    
     video.srcObject = null;
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(
         function (stream) {
             console.log(stream.getTracks().length);
 
-            stream.getTracks().forEach(function (track) { 
+            stream.getTracks().forEach(function (track) {
                 track.stop();
             });
 
