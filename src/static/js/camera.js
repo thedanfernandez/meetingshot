@@ -102,7 +102,7 @@ function stopCamera(container) {
     video = container.querySelector('.video-streamer');
 
     console.log(video);
-    
+
     video.srcObject = null;
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(
@@ -110,6 +110,7 @@ function stopCamera(container) {
             console.log(stream.getTracks().length);
 
             stream.getTracks().forEach(function (track) {
+                console.log("Found a stream that needs to be stopped.")
                 track.stop();
             });
 

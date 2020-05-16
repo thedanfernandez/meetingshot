@@ -57,6 +57,21 @@ attendeeCount.addEventListener("change", (event) => {
   setAttendeeConstraint(event.target.value);
 });
 
+// Switch style based on # of attendees
+function reStyleMeetingGrid() {
+  console.log("Re-styling...")
+  var meetingGrid = document.getElementById("meetingGrid");
+  var childCount = meetingGrid.childElementCount;
+
+  if (childCount >= 5 && childCount <= 9) {
+    meetingGrid.className = "grid grid-border grid-3row-3col";
+  } else if (childCount >= 3 && childCount <= 4) {
+    meetingGrid.className = "grid grid-border grid-2row-2col";
+  } else if (childCount >= 1 && childCount <= 2) {
+    meetingGrid.className = "grid grid-border grid-1row-2col";
+  }
+}
+
 // It's important to use this function to preserve the user's choices for previous
 // images and selections. Otherwise the grid is re-created.
 function setAttendeeConstraint(numberOfAttendees) {
@@ -71,7 +86,7 @@ function setAttendeeConstraint(numberOfAttendees) {
       var elementToRemove = meetingGrid.childNodes[childCount - 1 - iterator];
       var videoContainer = elementToRemove.querySelector('.main-page-video-container');
 
-      if (videoContainer){
+      if (videoContainer) {
         console.log("Need to stop the camera.");
         stopCamera(videoContainer);
       }
@@ -122,29 +137,17 @@ function imageExistsInGrid(path) {
     var element = meetingGrid.childNodes[i]
     var photoElement = element.querySelector('.cell-image');
 
-    var photo = photoElement.getAttribute('src')
+    if (photoElement != null) {
+      var photo = photoElement.getAttribute('src')
 
-    var match = (photo === path)
-    if (match === true) {
-      return true;
+      var match = (photo === path)
+      if (match === true) {
+        return true;
+      }
     }
   }
 
   return false;
-}
-
-// Switch style based on # of attendees
-function reStyleMeetingGrid() {
-  var meetingGrid = document.getElementById("meetingGrid");
-  var childCount = meetingGrid.childElementCount;
-
-  if (childCount >= 5 && childCount <= 9) {
-    meetingGrid.className = "grid grid-border grid-3row-3col";
-  } else if (childCount >= 3 && childCount <= 4) {
-    meetingGrid.className = "grid grid-border grid-2row-2col";
-  } else if (childCount >= 1 && childCount <= 2) {
-    meetingGrid.className = "grid grid-border grid-1row-2col";
-  }
 }
 
 function createGrid(value) {
