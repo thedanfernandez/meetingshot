@@ -97,23 +97,25 @@ function stopCamera(container) {
 
     video = container.querySelector('.video-streamer');
 
-    console.log(video);
+    for (const track of video.srcObject.getTracks()) {
+        track.stop();
+    }
 
     video.srcObject = null;
 
-    navigator.mediaDevices.getUserMedia({ video: true }).then(
-        function (stream) {
-            console.log(stream.getTracks().length);
+    // navigator.mediaDevices.getUserMedia({ video: true }).then(
+    //     function (stream) {
+    //         console.log(stream.getTracks().length);
 
-            stream.getTracks().forEach(function (track) {
-                console.log("Found a stream that needs to be stopped.")
-                track.stop();
-            });
+    //         stream.getTracks().forEach(function (track) {
+    //             console.log("Found a stream that needs to be stopped.")
+    //             track.stop();
+    //         });
 
-            console.log(stream.getTracks().length);
-        }).catch(
-            function (error) {
-                console.log('getUserMedia() error', error);
-            });
+    //         console.log(stream.getTracks().length);
+    //     }).catch(
+    //         function (error) {
+    //             console.log('getUserMedia() error', error);
+    //         });
 
 }
