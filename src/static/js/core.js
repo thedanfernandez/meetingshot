@@ -194,31 +194,38 @@ function setAttendeeConstraint(numberOfAttendees) {
     reStyleMeetingGrid();
 }
 
-function capture() {
+function exportImage() {
     // Prepare video background because we know that html2canvas doesn't deal with those.
-    video = document.getElementById('video');
-    canvas = document.getElementById('staticpicture');
-    photo = document.getElementById('camera-placeholder');
+    var meetingGrid = document.getElementById('meetingGrid');
+    // main-page-video-container
 
-    var context = canvas.getContext('2d');
+    var containers = meetingGrid.getElementsByClassName('main-page-video-container');
 
-    width = 500;
-    height = video.videoHeight / (video.videoWidth / width);
+    for (exportIterator = 0; exportIterator < containers.length; exportIterator++) {
+        var container = containers[exportIterator];
+        var video = container.querySelector('.main-page-video')
+        var canvas = container.querySelector('.video-canvas');
+        var photo = container.querySelector('.video-snapshot');
+        var context = canvas.getContext('2d');
 
-    if (isNaN(height)) {
-        height = width / (4 / 3);
+        width = 500;
+        height = video.videoHeight / (video.videoWidth / width);
+
+        if (isNaN(height)) {
+            height = width / (4 / 3);
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        context.drawImage(video, 0, 0, width, height);
+
+        document.querySelector('.hidden-custom-image').style.visibility = "visible"
+
+        var data = canvas.toDataURL('image/png');
+        photo.setAttribute('src', data);
     }
 
-    canvas.width = width;
-    canvas.height = height;
-    context.drawImage(video, 0, 0, width, height);
-
-    document.querySelector('.hidden-custom-image').style.visibility = "visible"
-
-    var data = canvas.toDataURL('image/png');
-    photo.setAttribute('src', data);
-
-    html2canvas(document.querySelector("#main-block")).then(canvas => {
+    html2canvas(document.querySelector("#meetingComposition")).then(canvas => {
         document.body.appendChild(canvas)
     })
 

@@ -30,8 +30,9 @@
             </select>
             <input type="checkbox" id="showNames" name="showNames" checked />
             <label for="showNames">Show Attendee Names</label>
-            <!-- <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
-            <label for="enableWebCam">Enable My Webcam</label> -->
+
+            <input type="button" id="exportShot" name="exportShot" value="Export Meeting Image"
+                onclick="exportImage();" />
             <br />
         </div>
     </section>
@@ -51,7 +52,7 @@
                                 <canvas id="staticpicture" class="hidden-custom-image video-canvas"></canvas>
                                 <img class="custom-image hidden-custom-image video-snapshot" id="photo"
                                     alt="The screen capture will appear in this box." />
-                                <div id="videoDiv">
+                                <div>
                                     <video autoplay="true" id="video" class="video-streamer"></video>
                                 </div>
                             </div>
@@ -59,7 +60,7 @@
                         </div>
                         <div id="custom-image-modal" class="card" onclick="">
                             <label class="custom-image-label" for="customImageInput">
-                            <img src="static/images/custom-image.png">
+                                <img src="static/images/custom-image.png">
                             </label>
                             <input class="custom-image-input" id="customImageInput" type="file"
                                 accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
@@ -69,11 +70,14 @@
                 </div>
             </div>
             <!-- Meeting Grid  -->
-            <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
+            <div id="meetingComposition" class="meeting-composition">
+                <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
 
-            <div class="meeting-footer">
-                <img src="/src/static/images/meeting-footer.png"></img>
+                <div class="meeting-footer">
+                    <img src="/src/static/images/meeting-footer.png"></img>
+                </div>
             </div>
+            <canvas id="staticPicture"></canvas>
         </div>
     </main>
 </body>

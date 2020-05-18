@@ -26,14 +26,24 @@ body {
   padding-bottom: 100px;
 }
 
+.meeting-composition {
+  width: 956px;
+  height: 582px;
+  position: relative;
+  background-color: #000;
+}
+
 .meeting-footer{
   text-align: center;
   height: 39px;
+  position: absolute;
+  bottom: 0vh;
 }
 
 .meeting-footer > img {
   width: 956px;
 }
+
 /*****************
   CSS Grid Styles
 *****************/
