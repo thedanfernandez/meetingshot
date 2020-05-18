@@ -35,15 +35,58 @@ function loadMeetingAttendees(attendees) {
       meetingGrid.childNodes[3].className = "cell5g-4";
       meetingGrid.childNodes[4].className = "cell5g-5";
       break;
+    case 4:
+      removeImageCss(meetingGrid);
+      break;
     case 3:
       meetingGrid.childNodes[2].className = "cell3g-3";
+      removeImageCss(meetingGrid);
+      break;
+    case 2:
+      meetingGrid.childNodes[0].className = "cell2g";
+      meetingGrid.childNodes[1].className = "cell2g";
+      removeImageCss(meetingGrid);
       break;
     case 1:
       meetingGrid.childNodes[0].className = "cell1g-1";
+      let item = meetingGrid.childNodes[0].querySelectorAll("img");
+      console.log(item);
+      item[0].className = "cell1g-img";
+
       break;
     default:
       break;
   }
+}
+
+function removeImageCss(el) {
+  let imgMatches = el.querySelectorAll("img");
+  imgMatches.forEach((x) => (x.className = ""));
+}
+
+function loadDefaultMeetingAttendees(attendeeCount) {
+  loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
+}
+
+const attendeeCount = document.getElementById("attendeeCount");
+
+attendeeCount.addEventListener("change", (event) => {
+  createGrid(event.target.value);
+});
+
+function createGrid(value) {
+  const meetingGrid = document.getElementById("meetingGrid");
+
+  //switch style based on # of attendees
+  if (value >= 5 && value <= 9) {
+    meetingGrid.className = "grid grid-border grid-3row-3col";
+  } else if (value >= 3 && value <= 4) {
+    meetingGrid.className = "grid grid-border grid-2row-2col";
+  } else if (value >= 1 && value <= 2) {
+    meetingGrid.className = "grid grid-border grid-1row-2col";
+  }
+  console.log("value=" + value);
+  loadDefaultMeetingAttendees(value);
 }
 
 /* 

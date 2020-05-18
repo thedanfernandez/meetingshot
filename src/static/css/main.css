@@ -125,10 +125,23 @@ body {
   grid-column: 2 / span 2;
 }
 
+.cell2g {
+  max-width: 480px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
 /* 1-attendee grid cell 1 */
 .cell1g-1 {
   grid-column: span 4;
   grid-row: span 4;
+  max-width: 960px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.cell1g-img {
+  width: 960px;
 }
 
 /* 
