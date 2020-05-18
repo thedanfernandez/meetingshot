@@ -96,32 +96,6 @@ function reStyleMeetingGrid() {
     }
 }
 
-function insertWebStream(context) {
-    context.innerHTML = "";
-
-    context.innerHTML = `<div id="webcamContainer" class="main-page-video-container" onclick="javascript:showModal(this.parentNode);">
-                            <canvas class="video-canvas hidden-custom-image"></canvas>
-                            <img class="custom-image hidden-custom-image video-snapshot" id="photo" alt="The screen capture will appear in this box.">
-                            <div id="videoDiv" class="container">
-                                <video autoplay="true" class="video-streamer main-page-video">
-
-                                </video>
-                            </div>
-                        </div>`;
-
-    loadCamera(context, 320);
-}
-
-function setImage(context, source) {
-    context.innerHTML = "";
-
-    context.innerHTML = `<img
-                            onclick="javascript:showModal(this.parentNode);"
-                            class="cell-image"
-                            src="${source}"
-                            />`;
-}
-
 var attendeeCount = document.getElementById("attendeeCount");
 
 function loadDefaultMeetingAttendees(attendeeCount) {
@@ -218,4 +192,35 @@ function setAttendeeConstraint(numberOfAttendees) {
     }
 
     reStyleMeetingGrid();
+}
+
+function capture() {
+    // Prepare video background because we know that html2canvas doesn't deal with those.
+    video = document.getElementById('video');
+    canvas = document.getElementById('staticpicture');
+    photo = document.getElementById('camera-placeholder');
+
+    var context = canvas.getContext('2d');
+
+    width = 500;
+    height = video.videoHeight / (video.videoWidth / width);
+
+    if (isNaN(height)) {
+        height = width / (4 / 3);
+    }
+
+    canvas.width = width;
+    canvas.height = height;
+    context.drawImage(video, 0, 0, width, height);
+
+    document.querySelector('.hidden-custom-image').style.visibility = "visible"
+
+    var data = canvas.toDataURL('image/png');
+    photo.setAttribute('src', data);
+
+    html2canvas(document.querySelector("#main-block")).then(canvas => {
+        document.body.appendChild(canvas)
+    })
+
+    document.querySelector('.hidden-custom-image').style.visibility = "hidden"
 }

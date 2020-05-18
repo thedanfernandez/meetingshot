@@ -6,14 +6,41 @@ Modal Attendee Gallery
 */
 const modal = document.getElementById("updateScreen");
 
+
+function insertWebStream(context) {
+  context.innerHTML = "";
+
+  context.innerHTML = `<div id="webcamContainer" class="main-page-video-container" onclick="javascript:showModal(this.parentNode);">
+                          <canvas class="video-canvas hidden-custom-image"></canvas>
+                          <img class="custom-image hidden-custom-image video-snapshot" id="photo" alt="The screen capture will appear in this box.">
+                          <div id="videoDiv" class="container">
+                              <video autoplay="true" class="video-streamer main-page-video">
+
+                              </video>
+                          </div>
+                      </div>`;
+
+  loadCamera(context, 320);
+}
+
+function setImage(context, source) {
+  context.innerHTML = "";
+
+  context.innerHTML = `<img
+                          onclick="javascript:showModal(this.parentNode);"
+                          class="cell-image"
+                          src="${source}"
+                          />`;
+}
+
 function showModal(context) {
   modal.style.display = "block";
   updateContext = context;
 
   var meetingDetails = document.querySelector('.meeting-details');
   var nodes = meetingDetails.getElementsByTagName('*');
-  for(var i = 0; i < nodes.length; i++){
-      nodes[i].disabled = true;
+  for (var i = 0; i < nodes.length; i++) {
+    nodes[i].disabled = true;
   }
 
   var container = document.getElementById("camera-modal");
@@ -25,8 +52,8 @@ function hideModal() {
 
   var meetingDetails = document.querySelector('.meeting-details');
   var nodes = meetingDetails.getElementsByTagName('*');
-  for(var i = 0; i < nodes.length; i++){
-      nodes[i].disabled = false;
+  for (var i = 0; i < nodes.length; i++) {
+    nodes[i].disabled = false;
   }
 
   var container = document.getElementById("camera-modal");
