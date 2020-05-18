@@ -202,13 +202,20 @@ function exportImage() {
     var containers = meetingGrid.getElementsByClassName('main-page-video-container');
 
     for (exportIterator = 0; exportIterator < containers.length; exportIterator++) {
+        console.log("There is a video container we need to process.");
+
         var container = containers[exportIterator];
-        var video = container.querySelector('.main-page-video')
+        var video = container.querySelector('.main-page-video');
         var canvas = container.querySelector('.video-canvas');
         var photo = container.querySelector('.video-snapshot');
         var context = canvas.getContext('2d');
 
-        width = 500;
+        console.log(container);
+        console.log(video);
+        console.log(canvas);
+        console.log(photo);
+
+        width = 320;
         height = video.videoHeight / (video.videoWidth / width);
 
         if (isNaN(height)) {
@@ -219,7 +226,8 @@ function exportImage() {
         canvas.height = height;
         context.drawImage(video, 0, 0, width, height);
 
-        document.querySelector('.hidden-custom-image').style.visibility = "visible"
+        container.querySelector('.hidden-custom-image').style.visibility = "visible"
+        video.style.visibility = "hidden"
 
         var data = canvas.toDataURL('image/png');
         photo.setAttribute('src', data);
@@ -230,4 +238,5 @@ function exportImage() {
     })
 
     document.querySelector('.hidden-custom-image').style.visibility = "hidden"
+    document.querySelector('.main-page-video').style.visibility = "visible"
 }

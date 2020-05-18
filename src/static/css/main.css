@@ -31,6 +31,7 @@ body {
   height: 582px;
   position: relative;
   background-color: #000;
+  margin: 0 auto;
 }
 
 .meeting-footer{
@@ -250,18 +251,22 @@ label {
   height: 182px;
 }
 
+.video-snapshot {
+  border: none;
+}
+
 .video-canvas,
 .hidden-custom-image {
   position: absolute;
   top: 0px;
   left: 0px;
   visibility: hidden;
+  border: 0px;
 }
 
 .custom-image {
   width: 320px;
   height: 182px;
-  border: #ffffff;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -284,4 +289,11 @@ label {
   left: 0px;
   padding: 0px;
   border: none;
+}
+
+.video-canvas,
+.video-snapshot,
+.main-page-video-container,
+.containter {
+  border: none !important;
 }
