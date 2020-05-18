@@ -35,15 +35,33 @@ function loadMeetingAttendees(attendees) {
       meetingGrid.childNodes[3].className = "cell5g-4";
       meetingGrid.childNodes[4].className = "cell5g-5";
       break;
+    case 4:
+      removeImageCss(meetingGrid);
+      break;
     case 3:
       meetingGrid.childNodes[2].className = "cell3g-3";
+      removeImageCss(meetingGrid);
+      break;
+    case 2:
+      meetingGrid.childNodes[0].className = "cell2g";
+      meetingGrid.childNodes[1].className = "cell2g";
+      removeImageCss(meetingGrid);
       break;
     case 1:
       meetingGrid.childNodes[0].className = "cell1g-1";
+      let item = meetingGrid.childNodes[0].querySelectorAll("img");
+      console.log(item);
+      item[0].className = "cell1g-img";
+
       break;
     default:
       break;
   }
+}
+
+function removeImageCss(el) {
+  let imgMatches = el.querySelectorAll("img");
+  imgMatches.forEach((x) => (x.className = ""));
 }
 
 function loadDefaultMeetingAttendees(attendeeCount) {
