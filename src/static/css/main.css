@@ -24,6 +24,29 @@ body {
 .background2 {
   padding-top: 100px;
   padding-bottom: 100px;
+  background-color: #000;
+  margin:0;
+  padding:0;
+}
+
+.meeting-composition {
+  width: 956px;
+  height: 582px;
+  position: relative;
+  background-color: #000;
+  margin: 0 auto;
+  padding:0;
+}
+
+.meeting-footer{
+  text-align: center;
+  height: 39px;
+  position: absolute;
+  bottom: 0vh;
+}
+
+.meeting-footer > img {
+  width: 956px;
 }
 
 /*****************
@@ -82,6 +105,7 @@ body {
   max-width: 480px;
   object-fit: contain;
   overflow: hidden;
+  background-color: #000;
 }
 
 .cell-image {
@@ -232,18 +256,22 @@ label {
   height: 182px;
 }
 
+.video-snapshot {
+  border: none;
+}
+
 .video-canvas,
 .hidden-custom-image {
   position: absolute;
   top: 0px;
   left: 0px;
   visibility: hidden;
+  border: 0px;
 }
 
 .custom-image {
   width: 320px;
   height: 182px;
-  border: #ffffff;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -266,4 +294,11 @@ label {
   left: 0px;
   padding: 0px;
   border: none;
+}
+
+.video-canvas,
+.video-snapshot,
+.main-page-video-container,
+.container {
+  border: none !important;
 }

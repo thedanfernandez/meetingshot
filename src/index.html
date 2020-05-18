@@ -30,46 +30,55 @@
             </select>
             <input type="checkbox" id="showNames" name="showNames" checked />
             <label for="showNames">Show Attendee Names</label>
-            <!-- <input type="checkbox" id="enableWebCam" name="enableWebCam" checked />
-            <label for="enableWebCam">Enable My Webcam</label> -->
+
+            <input type="button" id="exportShot" name="exportShot" value="Export Meeting Image"
+                onclick="exportImage();" />
             <br />
         </div>
     </section>
 
     <main>
         <div class="background2">
-            <!-- Modal Gallery  -->
-            <div class="modal" id="updateScreen">
-                <div class="modal-content">
-                    <span class="modal-close" onclick="javascript:hideModal();">
-                        &times;
-                    </span>
-                    <h3>Select an attendee</h3>
-                    <div id="gallery">
-                        <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
-                            <div class="modal-video-bucket">
-                                <canvas id="staticpicture" class="hidden-custom-image video-canvas"></canvas>
-                                <img class="custom-image hidden-custom-image video-snapshot" id="photo"
-                                    alt="The screen capture will appear in this box." />
-                                <div id="videoDiv">
-                                    <video autoplay="true" id="video" class="video-streamer"></video>
-                                </div>
+            <!-- Meeting Grid  -->
+            <div id="meetingComposition" class="meeting-composition">
+                <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
+
+                <div class="meeting-footer">
+                    <img src="/src/static/images/meeting-footer.png"></img>
+                </div>
+            </div>
+            <canvas id="staticPicture"></canvas>
+        </div>
+
+        <!-- Modal Gallery  -->
+        <div class="modal" id="updateScreen">
+            <div class="modal-content">
+                <span class="modal-close" onclick="javascript:hideModal();">
+                    &times;
+                </span>
+                <h3>Select an attendee</h3>
+                <div id="gallery">
+                    <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
+                        <div class="modal-video-bucket">
+                            <canvas id="staticpicture" class="hidden-custom-image video-canvas"></canvas>
+                            <img class="custom-image hidden-custom-image video-snapshot" id="photo"
+                                alt="The screen capture will appear in this box." />
+                            <div>
+                                <video autoplay="true" id="video" class="video-streamer"></video>
                             </div>
-                            <div class="card-text">Webcam</div>
                         </div>
-                        <div id="custom-image-modal" class="card" onclick="">
-                            <label class="custom-image-label" for="customImageInput">
+                        <div class="card-text">Webcam</div>
+                    </div>
+                    <div id="custom-image-modal" class="card" onclick="">
+                        <label class="custom-image-label" for="customImageInput">
                             <img src="static/images/custom-image.png">
-                            </label>
-                            <input class="custom-image-input" id="customImageInput" type="file"
-                                accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
-                            <div class="card-text">Custom Image</div>
-                        </div>
+                        </label>
+                        <input class="custom-image-input" id="customImageInput" type="file"
+                            accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
+                        <div class="card-text">Custom Image</div>
                     </div>
                 </div>
             </div>
-            <!-- Meeting Grid  -->
-            <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
         </div>
     </main>
 </body>
@@ -78,5 +87,7 @@
 <script async type="text/javascript" src="static/js/camera.js"></script>
 <script type="text/javascript" src="static/js/customattendee.js"></script>
 <script async type="text/javascript" src="static/js/core.js"></script>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 </html>
