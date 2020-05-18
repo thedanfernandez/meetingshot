@@ -26,6 +26,14 @@ body {
   padding-bottom: 100px;
 }
 
+.meeting-footer{
+  text-align: center;
+  height: 39px;
+}
+
+.meeting-footer > img {
+  width: 956px;
+}
 /*****************
   CSS Grid Styles
 *****************/
