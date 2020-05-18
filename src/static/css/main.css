@@ -70,13 +70,12 @@ body {
   max-width: 480px;
   object-fit: contain;
   overflow: hidden;
-}
+} */
 
 .item-image {
   width: 320px;
-  height: 182px;
   object-fit: cover;
-} */
+}
 
 .cell {
   grid-column: span 2;
@@ -233,7 +232,11 @@ label {
   height: 182px;
 }
 
+.video-canvas,
 .hidden-custom-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   visibility: hidden;
 }
 

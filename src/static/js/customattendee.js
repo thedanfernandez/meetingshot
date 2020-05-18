@@ -98,12 +98,24 @@ function showModal(context) {
   modal.style.display = "block";
   updateContext = context;
 
+  var meetingDetails = document.querySelector('.meeting-details');
+  var nodes = meetingDetails.getElementsByTagName('*');
+  for(var i = 0; i < nodes.length; i++){
+      nodes[i].disabled = true;
+  }
+
   var container = document.getElementById("camera-modal");
   loadCamera(container, 240);
 }
 
 function hideModal() {
   modal.style.display = "none";
+
+  var meetingDetails = document.querySelector('.meeting-details');
+  var nodes = meetingDetails.getElementsByTagName('*');
+  for(var i = 0; i < nodes.length; i++){
+      nodes[i].disabled = false;
+  }
 
   var container = document.getElementById("camera-modal");
   stopCamera(container);
@@ -126,6 +138,8 @@ function processCustomImage(context, fileSelector) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
+      stopCamera(context);
+
       context.innerHTML = "";
 
       context.innerHTML = `<img
@@ -136,6 +150,7 @@ function processCustomImage(context, fileSelector) {
     };
 
     reader.readAsDataURL(fileSelector.files[0]);
+
   }
 
   hideModal();

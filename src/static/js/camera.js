@@ -8,7 +8,6 @@ var streaming = false;
 var video = null;
 var canvas = null;
 var photo = null;
-var startbutton = null;
 
 // Loads the camera. The containerDiv argument tells us where the container is where we need to look up elements for camera
 // stream ingestion.
@@ -22,7 +21,6 @@ function startup(container) {
     video = container.querySelector('.video-streamer');
     canvas = container.querySelector('.video-canvas');
     photo = container.querySelector('.video-snapshot');
-    startbutton = document.getElementById('startbutton');
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(function (stream) {
@@ -56,11 +54,6 @@ function startup(container) {
         }
     }, false);
 
-    startbutton.addEventListener('click', function (ev) {
-        takepicture();
-        ev.preventDefault();
-    }, false);
-
     clearphoto();
 }
 
@@ -68,6 +61,8 @@ function startup(container) {
 // captured.
 
 function clearphoto() {
+    //video-canvas 
+    // var canvas = container.querySelector('.video-canvas');
     var context = canvas.getContext('2d');
     context.fillStyle = "#AAA";
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -83,6 +78,7 @@ function clearphoto() {
 // other changes before drawing it.
 
 function takepicture() {
+    // var canvas = container.querySelector('.video-canvas');
     var context = canvas.getContext('2d');
     if (width && height) {
         canvas.width = width;
@@ -97,22 +93,16 @@ function takepicture() {
 }
 
 function stopCamera(container) {
+    console.log("Stopping the camera.");
+    console.log(container)
+
     video = container.querySelector('.video-streamer');
 
+    console.log(video);
+    
+    for (const track of video.srcObject.getTracks()) {
+        track.stop();
+    }
+
     video.srcObject = null;
-
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(
-        function (stream) {
-            console.log(stream.getTracks().length);
-
-            stream.getTracks().forEach(function (track) { 
-                track.stop();
-            });
-
-            console.log(stream.getTracks().length);
-        }).catch(
-            function (error) {
-                console.log('getUserMedia() error', error);
-            });
-
 }
