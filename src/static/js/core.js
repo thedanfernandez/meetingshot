@@ -233,7 +233,7 @@ function exportImage() {
         photo.setAttribute('src', data);
     }
 
-    html2canvas(document.querySelector("#meetingComposition")).then(canvas => {
+    html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0}).then(canvas => {
         document.body.appendChild(canvas)
     })
 

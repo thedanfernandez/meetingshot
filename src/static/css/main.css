@@ -24,6 +24,9 @@ body {
 .background2 {
   padding-top: 100px;
   padding-bottom: 100px;
+  background-color: #000;
+  margin:0;
+  padding:0;
 }
 
 .meeting-composition {
@@ -32,6 +35,8 @@ body {
   position: relative;
   background-color: #000;
   margin: 0 auto;
+  z-index: 1;
+  padding:0;
 }
 
 .meeting-footer{
@@ -101,6 +106,7 @@ body {
   max-width: 480px;
   object-fit: contain;
   overflow: hidden;
+  background-color: #000;
 }
 
 .cell-image {
