@@ -320,3 +320,11 @@ label {
   filter: invert(100%);
   height: 96px;
 }
+
+.attendee-counter-label{
+  color: #ffffff;
+  font-size: 8pt;
+  position: absolute;
+  bottom: 1.1vh;
+  left: 350px;
+}
