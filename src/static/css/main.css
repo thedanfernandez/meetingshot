@@ -111,9 +111,10 @@ body {
 }
 
 .cell-image {
-  width: 320px;
-  height: 182px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border: none;
 }
 
 .cell-fit {
@@ -121,6 +122,10 @@ body {
   overflow: hidden;
 }
 
+.cell-container{
+  width: 100%;
+  height: 100%;
+}
 /* 8-attendee grid cell 7 */
 .cell8g-7 {
   grid-column: 2 / span 2;
@@ -274,7 +279,7 @@ label {
   left: 0px;
   visibility: hidden;
   border: 0px;
-  width: 320px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -284,12 +289,12 @@ label {
 }
 
 .main-page-video {
-  width: 320px;
-  border: none;
+  width: 100%;
+  border: none !important;
 }
 
 .main-page-video-container {
-  height: 182px;
+  height: 100%;
   position: relative;
   top: 0px;
   left: 0px;
@@ -302,12 +307,12 @@ label {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 320px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   border: none;
-  text-align: center;
   background-color: black;
   opacity: .5;
+  text-align: center;
 }
 
 .cell:hover .option-overlay {
@@ -317,10 +322,15 @@ label {
 }
 
 .option-overlay > img {
-  border: none;
-  margin-top: 40px;
+  border: none !important;
   filter: invert(100%);
   height: 96px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .attendee-counter-label{
