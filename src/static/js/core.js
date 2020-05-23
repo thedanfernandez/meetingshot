@@ -239,12 +239,16 @@ function exportImage() {
         photo.setAttribute('src', data);
     }
 
-    html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0}).then(canvas => {
+    document.documentElement.classList.add("hide-scrollbar");
+
+    html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0, allowTaint: false, scale: 1}).then(canvas => {
         var a = document.createElement('a');
         a.href = canvas.toDataURL();
         a.download = "meetingshot-generated-image.png";
         a.click();
     })
+
+    document.documentElement.classList.remove("hide-scrollbar");
 
     document.querySelector('.hidden-custom-image').style.visibility = "hidden"
     document.querySelector('.main-page-video').style.visibility = "visible"

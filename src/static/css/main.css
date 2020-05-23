@@ -45,6 +45,11 @@ body {
   width: 956px;
 }
 
+.hide-scrollbar {
+	overflow: -moz-hidden-unscrollable;
+	overflow: hidden;
+}
+
 /*****************
   CSS Grid Styles
 *****************/
