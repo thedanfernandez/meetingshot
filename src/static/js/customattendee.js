@@ -10,7 +10,8 @@ const modal = document.getElementById("updateScreen");
 function insertWebStream(context) {
   context.innerHTML = "";
 
-  context.innerHTML = `<div class="main-page-video-container">
+  context.innerHTML = `
+                      <div class="main-page-video-container">
                           <canvas data-html2canvas-ignore="true" class="video-canvas"></canvas>
                           <img class="hidden-custom-image" alt="The screen capture will appear in this box.">
                           <div data-html2canvas-ignore="true" class="container">
@@ -18,20 +19,21 @@ function insertWebStream(context) {
 
                               </video>
                           </div>
-                      </div>
-                      <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
+                          <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                      </div>`;
 
-  loadCamera(context, 320);
+  loadCamera(context, context.width);
 }
 
 function setImage(context, source) {
   context.innerHTML = "";
 
-  context.innerHTML = `<img
+  context.innerHTML = `<div class="cell-container"><img
                           class="cell-image"
                           src="${source}"
                           />
-                       <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
+                       <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                       </div>`;
 }
 
 function showModal(context) {

@@ -16,11 +16,13 @@ function loadMeetingAttendees(attendees) {
 
     for (let i = 0; i < attendees.length; i++) {
         let attendeeHtml = `<div class="cell">
-              <img
-                class="cell-image"
-                src="${attendees[i].path}"
-              />
-              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+              <div class="cell-container">
+                <img
+                    class="cell-image"
+                    src="${attendees[i].path}"
+                />
+                <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+              </div>
             </div>`;
         meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
     }
@@ -144,7 +146,7 @@ function createGrid(value) {
     reStyleMeetingGrid();
 }
 
-function updateMeetingAttendeeCounter(){
+function updateMeetingAttendeeCounter() {
     var counterLabel = document.getElementById("counterLabel");
     counterLabel.innerHTML = document.getElementById("meetingGrid").childElementCount;
 }
@@ -186,11 +188,13 @@ function setAttendeeConstraint(numberOfAttendees) {
             } while (imageExistsInGrid(imagePath));
 
             let attendeeHtml = `<div class="cell">
+                            <div class="cell-container">
                               <img
                                 class="cell-image"
                                 src="${imagePath}"
                               />
                               <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                            </div>
                             </div>`;
 
             meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
@@ -222,7 +226,7 @@ function exportImage() {
         console.log(canvas);
         console.log(photo);
 
-        width = 320;
+        width = video.videoWidth;
         height = video.videoHeight / (video.videoWidth / width);
 
         if (isNaN(height)) {
@@ -239,12 +243,16 @@ function exportImage() {
         photo.setAttribute('src', data);
     }
 
-    html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0}).then(canvas => {
+    document.documentElement.classList.add("hide-scrollbar");
+
+    html2canvas(document.querySelector("#meetingComposition"), { scrollX: 0, scrollY: 0, allowTaint: false, scale: 1 }).then(canvas => {
         var a = document.createElement('a');
         a.href = canvas.toDataURL();
         a.download = "meetingshot-generated-image.png";
         a.click();
     })
+
+    document.documentElement.classList.remove("hide-scrollbar");
 
     document.querySelector('.hidden-custom-image').style.visibility = "hidden"
     document.querySelector('.main-page-video').style.visibility = "visible"
