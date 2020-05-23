@@ -125,6 +125,7 @@ body {
 .cell-container{
   width: 100%;
   height: 100%;
+  border: none !important;
 }
 /* 8-attendee grid cell 7 */
 .cell8g-7 {
@@ -293,13 +294,17 @@ label {
   border: none !important;
 }
 
+.container {
+  border: none !important;
+}
+
 .main-page-video-container {
   height: 100%;
   position: relative;
   top: 0px;
   left: 0px;
   padding: 0px;
-  border: none;
+  border: none !important;
 }
 
 .option-overlay{
