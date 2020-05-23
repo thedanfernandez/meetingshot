@@ -257,25 +257,25 @@ label {
   height: 182px;
 }
 
-.video-snapshot {
-  border: none;
-}
-
-.video-canvas,
 .hidden-custom-image {
   position: absolute;
   top: 0px;
   left: 0px;
   visibility: hidden;
   border: 0px;
+  object-fit: cover;
+  width: 320px;
+  height: 180px;
 }
 
-.custom-image {
-  width: 320px;
-  height: 182px;
+.video-canvas {
   position: absolute;
   top: 0px;
   left: 0px;
+  visibility: hidden;
+  border: 0px;
+  width: 320px;
+  object-fit: cover;
 }
 
 .modal-video-bucket {
@@ -295,13 +295,6 @@ label {
   left: 0px;
   padding: 0px;
   border: none;
-}
-
-.video-canvas,
-.video-snapshot,
-.main-page-video-container,
-.container {
-  border: none !important;
 }
 
 .option-overlay{

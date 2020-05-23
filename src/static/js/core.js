@@ -207,7 +207,7 @@ function exportImage() {
         var container = containers[exportIterator];
         var video = container.querySelector('.main-page-video');
         var canvas = container.querySelector('.video-canvas');
-        var photo = container.querySelector('.video-snapshot');
+        var photo = container.querySelector('.hidden-custom-image');
         var context = canvas.getContext('2d');
 
         console.log(container);
@@ -226,8 +226,7 @@ function exportImage() {
         canvas.height = height;
         context.drawImage(video, 0, 0, width, height);
 
-        container.querySelector('.hidden-custom-image').style.visibility = "visible"
-        video.style.visibility = "hidden"
+        photo.style.visibility = "visible"
 
         var data = canvas.toDataURL('image/png');
         photo.setAttribute('src', data);

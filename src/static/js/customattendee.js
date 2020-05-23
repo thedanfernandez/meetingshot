@@ -11,9 +11,9 @@ function insertWebStream(context) {
   context.innerHTML = "";
 
   context.innerHTML = `<div class="main-page-video-container">
-                          <canvas class="video-canvas hidden-custom-image"></canvas>
-                          <img class="custom-image hidden-custom-image video-snapshot" id="photo" alt="The screen capture will appear in this box.">
-                          <div class="container">
+                          <canvas data-html2canvas-ignore="true" class="video-canvas"></canvas>
+                          <img class="hidden-custom-image" alt="The screen capture will appear in this box.">
+                          <div data-html2canvas-ignore="true" class="container">
                               <video autoplay="true" class="video-streamer main-page-video">
 
                               </video>
