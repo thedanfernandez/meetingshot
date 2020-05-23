@@ -1,6 +1,7 @@
 // Core load events that need to be triggered when the page loads.
 window.addEventListener("load", loadDefaultMeetingAttendees(6), false);
 window.addEventListener("load", loadGalleryCards, false);
+window.addEventListener("load", updateMeetingAttendeeCounter, false);
 
 function loadMeetingAttendees(attendees) {
     //check if attendees is an array, if not, log error

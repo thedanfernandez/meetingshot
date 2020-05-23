@@ -4,21 +4,26 @@
 
 .modal {
   display: none;
-  position: fixed;
   z-index: 1;
-  left: 25%;
-  top: 25%;
-  width: 60%;
-  height: 60%;
+  width: 1000px;
+  height: 500px;
   overflow: auto;
+  max-width: 850px;
+  min-width: 850px;
   background-color: #fefefe;
+  max-height: 700px;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  top: 45%; left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 3% auto;
-  padding: 20px;
-  width: 80%;
+  margin: 0 0;
+  padding: 0px;
+  width: 100%;
 }
 
 .modal-close {
@@ -26,6 +31,10 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 45px;
+  right: 45px;
 }
 
 .custom-image-modal {
@@ -52,4 +61,16 @@
   cursor: pointer;
   height: 135px;
   display: inherit;
+}
+
+.gallery{
+  max-width: 900px;
+  padding: 0px 25px 25px 25px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.modal-label {
+  margin: 50px 0px 0px 50px;
+  height: 20px;
 }
