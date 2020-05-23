@@ -271,7 +271,8 @@ label {
   left: 0px;
   visibility: hidden;
   object-fit: cover;
-  width: 320px;
+  width: 100%;
+  border: none !important;
 }
 
 .video-canvas {
