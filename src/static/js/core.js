@@ -19,7 +19,7 @@ function loadMeetingAttendees(attendees) {
                 class="cell-image"
                 src="${attendees[i].path}"
               />
-              <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
             </div>`;
         meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
     }
@@ -184,7 +184,7 @@ function setAttendeeConstraint(numberOfAttendees) {
                                 class="cell-image"
                                 src="${imagePath}"
                               />
-                              <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
                             </div>`;
 
             meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);

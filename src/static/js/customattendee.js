@@ -19,7 +19,7 @@ function insertWebStream(context) {
                               </video>
                           </div>
                       </div>
-                      <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
+                      <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
 
   loadCamera(context, 320);
 }
@@ -31,7 +31,7 @@ function setImage(context, source) {
                           class="cell-image"
                           src="${source}"
                           />
-                       <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
+                       <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
 }
 
 function showModal(context) {

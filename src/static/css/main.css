@@ -313,6 +313,8 @@ label {
   height: 180px;
   border: none;
   text-align: center;
+  background-color: black;
+  opacity: .5;
 }
 
 .cell:hover .option-overlay {
@@ -322,6 +324,7 @@ label {
 
 .option-overlay > img {
   border: none;
-  margin-top: 65px;
+  margin-top: 40px;
   filter: invert(100%);
+  height: 96px;
 }
