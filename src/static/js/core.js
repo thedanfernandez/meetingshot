@@ -16,10 +16,10 @@ function loadMeetingAttendees(attendees) {
     for (let i = 0; i < attendees.length; i++) {
         let attendeeHtml = `<div class="cell">
               <img
-                onclick="javascript:showModal(this.parentNode);"
                 class="cell-image"
                 src="${attendees[i].path}"
               />
+              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
             </div>`;
         meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
     }
@@ -181,10 +181,10 @@ function setAttendeeConstraint(numberOfAttendees) {
 
             let attendeeHtml = `<div class="cell">
                               <img
-                                onclick="javascript:showModal(this.parentNode);"
                                 class="cell-image"
                                 src="${imagePath}"
                               />
+                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
                             </div>`;
 
             meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
@@ -207,7 +207,7 @@ function exportImage() {
         var container = containers[exportIterator];
         var video = container.querySelector('.main-page-video');
         var canvas = container.querySelector('.video-canvas');
-        var photo = container.querySelector('.video-snapshot');
+        var photo = container.querySelector('.hidden-custom-image');
         var context = canvas.getContext('2d');
 
         console.log(container);
@@ -226,15 +226,17 @@ function exportImage() {
         canvas.height = height;
         context.drawImage(video, 0, 0, width, height);
 
-        container.querySelector('.hidden-custom-image').style.visibility = "visible"
-        video.style.visibility = "hidden"
+        photo.style.visibility = "visible"
 
         var data = canvas.toDataURL('image/png');
         photo.setAttribute('src', data);
     }
 
     html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0}).then(canvas => {
-        document.body.appendChild(canvas)
+        var a = document.createElement('a');
+        a.href = canvas.toDataURL();
+        a.download = "meetingshot-generated-image.png";
+        a.click();
     })
 
     document.querySelector('.hidden-custom-image').style.visibility = "hidden"

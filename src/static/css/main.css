@@ -106,6 +106,7 @@ body {
   object-fit: contain;
   overflow: hidden;
   background-color: #000;
+  position: relative;
 }
 
 .cell-image {
@@ -256,25 +257,23 @@ label {
   height: 182px;
 }
 
-.video-snapshot {
-  border: none;
-}
-
-.video-canvas,
 .hidden-custom-image {
   position: absolute;
   top: 0px;
   left: 0px;
   visibility: hidden;
-  border: 0px;
+  object-fit: cover;
+  width: 320px;
 }
 
-.custom-image {
-  width: 320px;
-  height: 182px;
+.video-canvas {
   position: absolute;
   top: 0px;
   left: 0px;
+  visibility: hidden;
+  border: 0px;
+  width: 320px;
+  object-fit: cover;
 }
 
 .modal-video-bucket {
@@ -296,9 +295,28 @@ label {
   border: none;
 }
 
-.video-canvas,
-.video-snapshot,
-.main-page-video-container,
-.container {
-  border: none !important;
+.option-overlay{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 180px;
+  border: none;
+  text-align: center;
+  background-color: black;
+  opacity: .5;
+}
+
+.cell:hover .option-overlay {
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+.option-overlay > img {
+  border: none;
+  margin-top: 40px;
+  filter: invert(100%);
+  height: 96px;
 }
