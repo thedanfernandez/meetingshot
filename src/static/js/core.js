@@ -143,6 +143,11 @@ function createGrid(value) {
     reStyleMeetingGrid();
 }
 
+function updateMeetingAttendeeCounter(){
+    var counterLabel = document.getElementById("counterLabel");
+    counterLabel.innerHTML = document.getElementById("meetingGrid").childElementCount;
+}
+
 // It's important to use this function to preserve the user's choices for previous
 // images and selections. Otherwise the grid is re-created.
 function setAttendeeConstraint(numberOfAttendees) {
@@ -191,6 +196,7 @@ function setAttendeeConstraint(numberOfAttendees) {
         }
     }
 
+    updateMeetingAttendeeCounter();
     reStyleMeetingGrid();
 }
 
