@@ -234,7 +234,10 @@ function exportImage() {
     }
 
     html2canvas(document.querySelector("#meetingComposition"),{scrollX: 0, scrollY: 0}).then(canvas => {
-        document.body.appendChild(canvas)
+        var a = document.createElement('a');
+        a.href = canvas.toDataURL();
+        a.download = "meetingshot-generated-image.png";
+        a.click();
     })
 
     document.querySelector('.hidden-custom-image').style.visibility = "hidden"
