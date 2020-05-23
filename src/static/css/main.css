@@ -311,6 +311,7 @@ label {
 .cell:hover .option-overlay {
   display: block;
   border: none;
+  cursor: pointer;
 }
 
 .option-overlay > img {
