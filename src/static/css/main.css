@@ -262,7 +262,6 @@ label {
   top: 0px;
   left: 0px;
   visibility: hidden;
-  border: 0px;
   object-fit: cover;
   width: 320px;
 }
