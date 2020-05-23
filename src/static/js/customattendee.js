@@ -35,7 +35,7 @@ function setImage(context, source) {
 }
 
 function showModal(context) {
-  modal.style.display = "block";
+  modal.style.display = "flex";
   updateContext = context;
 
   var meetingDetails = document.querySelector('.meeting-details');

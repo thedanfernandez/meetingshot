@@ -14,8 +14,13 @@
 
 <body>
     <section class="background">
-        <nav>Nav goes here</nav>
-        <h1>Create a Faux Meeting Screenshot</h1>
+        <nav>
+            <div class="topnav">
+                <a class="active" href="/">Screenshot Generator</a>
+                <a href="#news">About</a>
+                <a href="#contact">FAQ</a>
+            </div>
+        </nav>
         <div class="meeting-details">
             <h2>Meeting Details</h2>
             <label for="attendeeCount">Number of Attendees:</label>
@@ -30,8 +35,8 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
             </select>
-            <input type="checkbox" id="showNames" name="showNames" checked />
-            <label for="showNames">Show Attendee Names</label>
+            <!-- <input type="checkbox" id="showNames" name="showNames" checked />
+            <label for="showNames">Show Attendee Names</label> -->
 
             <input type="button" id="exportShot" name="exportShot" value="Export Meeting Image"
                 onclick="exportImage();" />
@@ -51,31 +56,33 @@
                 <p id="counterLabel" class="attendee-counter-label">9</p>
             </div>
             <canvas id="staticPicture"></canvas>
-        </div>
 
-        <!-- Modal Gallery  -->
-        <div class="modal" id="updateScreen">
-            <div class="modal-content">
-                <span class="modal-close" onclick="javascript:hideModal();">
-                    &times;
-                </span>
-                <h3>Select an attendee</h3>
-                <div id="gallery">
-                    <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
-                        <div class="modal-video-bucket">
-                            <div>
-                                <video autoplay="true" id="video" class="video-streamer"></video>
-                            </div>
-                        </div>
-                        <div class="card-text">Webcam</div>
+            <!-- Modal Gallery  -->
+            <div data-html2canvas-ignore="true" class="modal" id="updateScreen">
+                <div class="modal-content">
+                    <div class="modal-label">
+                        <h3>Select an attendee</h3>
+                        <span class="modal-close" onclick="javascript:hideModal();">
+                            &times;
+                        </span>
                     </div>
-                    <div id="custom-image-modal" class="card" onclick="">
-                        <label class="custom-image-label" for="customImageInput">
-                            <img src="static/images/custom-image.png">
-                        </label>
-                        <input class="custom-image-input" id="customImageInput" type="file"
-                            accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
-                        <div class="card-text">Custom Image</div>
+                    <div id="gallery" class="gallery">
+                        <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
+                            <div class="modal-video-bucket">
+                                <div>
+                                    <video autoplay="true" id="video" class="video-streamer"></video>
+                                </div>
+                            </div>
+                            <div class="card-text">Webcam</div>
+                        </div>
+                        <div id="custom-image-modal" class="card" onclick="">
+                            <label class="custom-image-label" for="customImageInput">
+                                <img src="static/images/custom-image.png">
+                            </label>
+                            <input class="custom-image-input" id="customImageInput" type="file"
+                                accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
+                            <div class="card-text">Custom Image</div>
+                        </div>
                     </div>
                 </div>
             </div>
