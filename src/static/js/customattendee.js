@@ -10,7 +10,7 @@ const modal = document.getElementById("updateScreen");
 function insertWebStream(context) {
   context.innerHTML = "";
 
-  context.innerHTML = `<div class="main-page-video-container" onclick="javascript:showModal(this.parentNode);">
+  context.innerHTML = `<div class="main-page-video-container">
                           <canvas class="video-canvas hidden-custom-image"></canvas>
                           <img class="custom-image hidden-custom-image video-snapshot" id="photo" alt="The screen capture will appear in this box.">
                           <div class="container">
@@ -18,7 +18,8 @@ function insertWebStream(context) {
 
                               </video>
                           </div>
-                      </div>`;
+                      </div>
+                      <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
 
   loadCamera(context, 320);
 }
@@ -27,10 +28,10 @@ function setImage(context, source) {
   context.innerHTML = "";
 
   context.innerHTML = `<img
-                          onclick="javascript:showModal(this.parentNode);"
                           class="cell-image"
                           src="${source}"
-                          />`;
+                          />
+                       <div onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
 }
 
 function showModal(context) {

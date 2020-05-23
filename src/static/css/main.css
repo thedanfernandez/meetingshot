@@ -106,6 +106,7 @@ body {
   object-fit: contain;
   overflow: hidden;
   background-color: #000;
+  position: relative;
 }
 
 .cell-image {
@@ -301,4 +302,26 @@ label {
 .main-page-video-container,
 .container {
   border: none !important;
+}
+
+.option-overlay{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 180px;
+  border: none;
+  text-align: center;
+}
+
+.cell:hover .option-overlay {
+  display: block;
+  border: none;
+}
+
+.option-overlay > img {
+  border: none;
+  margin-top: 65px;
+  filter: invert(100%);
 }
