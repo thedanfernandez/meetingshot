@@ -61,7 +61,6 @@ function hideModal() {
 
   var container = document.getElementById("camera-modal");
   stopCamera(container);
-  console.log("Close modal.");
 }
 
 function updateAttendee(context, newImage) {
@@ -70,7 +69,6 @@ function updateAttendee(context, newImage) {
 }
 
 function updateAttendeeWebStream(context) {
-  console.log(context);
   hideModal();
   insertWebStream(context);
 }
@@ -80,15 +78,21 @@ function processCustomImage(context, fileSelector) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      stopCamera(context);
+      try {
+        stopCamera(context);
+      } catch (e) {
+        console.log("Error stopping camera: " + e);
+      }
 
+      console.log(context);
       context.innerHTML = "";
 
       context.innerHTML = `<img
                               onclick="javascript:showModal(this.parentNode);"
-                              class="item-image"
+                              class="cell-image"
                               src="${e.target.result}"
-                              />`;
+                              />
+                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
     };
 
     reader.readAsDataURL(fileSelector.files[0]);
@@ -105,9 +109,11 @@ function loadGalleryCards() {
     let path = a.path;
 
     let galleryHtml = `<div class="card">
+        <div class="card-image-container">
         <img
             onclick="javascript:updateAttendee(updateContext, this);"
             src="${a.path}" />
+        </div>
         <div class="card-text">
             ${a.name}
         </div>
