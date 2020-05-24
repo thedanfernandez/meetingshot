@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- data-html2canvas-ignore="true"  -->
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-    <title>MeetingShot - Faux Meeting Screenshot Generator</title>
+    <title>Screenshot Generator | MeetingShot</title>
 </head>
 
 <body>
@@ -17,43 +15,54 @@
         <nav>
             <div class="topnav">
                 <a class="active" href="/">Screenshot Generator</a>
-                <a href="#news">About</a>
+                <a href="about.html">About</a>
                 <a href="#contact">FAQ</a>
             </div>
         </nav>
         <div class="meeting-details">
             <h2>Meeting Details</h2>
-            <label for="attendeeCount">Number of Attendees:</label>
-            <select id="attendeeCount" name="attendeeCount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option selected value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
 
-            <label for="attendeeHighlight">Highlight attendee:</label>
-            <select id="attendeeHighlight" name="attendeeHighlight">
-                <option selected value="None">None</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-            <!-- <input type="checkbox" id="showNames" name="showNames" checked />
-            <label for="showNames">Show Attendee Names</label> -->
+            <div class="selector-composite">
+                <div style="display: inline">
+                    <label for="attendeeCount">Number of Attendees:</label>
+                </div>
+                <div style="display: inline">
+                    <div class="select">
+                        <select id="attendeeCount" name="attendeeCount">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option selected value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                </span>
+            </div>
 
-            <input type="button" id="exportShot" name="exportShot" value="Export Meeting Image"
-                onclick="exportImage();" />
+            <div class="selector-composite">
+                <label for="attendeeHighlight">Highlight attendee:</label>
+                <div class="select">
+                    <select id="attendeeHighlight" name="attendeeHighlight">
+                        <option selected value="None">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+            </div>
+
+            <input class="pure-button pure-button-primary export-button" type="button" id="exportShot" name="exportShot"
+                value="Export Meeting Image" onclick="exportImage();" />
             <br />
         </div>
     </section>
