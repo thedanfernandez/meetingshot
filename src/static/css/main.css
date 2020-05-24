@@ -5,7 +5,7 @@ body {
 }
 
 .meeting-details {
-  background-color: #ffffff;
+  background-color: #cccdd1;
   border: 1px;
   border-bottom: slategray;
   padding: 20px 20px 20px 20px;
@@ -321,4 +321,69 @@ label {
 
 .attendee-highlight{
   border: 3px solid #76aa3c;
+}
+
+/* Selector */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 120px;
+  height: 2em;
+  line-height: 2;
+  background: #34495e;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top: -8px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+  color: #fff;
+}
+/* Transition */
+.select:hover::after {
+  color: #00ACFF;
+}
+
+.selector-composite{
+  display: inline-flex;
+  margin-right: 15px;
+}
+
+.export-button{
+  margin-top: -9px;
 }
