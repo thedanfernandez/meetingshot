@@ -13,7 +13,6 @@ var photo = null;
 // stream ingestion.
 function loadCamera(container, presetWidth) {
     width = presetWidth;
-    console.log(container)
     startup(container);
 };
 
@@ -93,12 +92,7 @@ function takepicture() {
 }
 
 function stopCamera(container) {
-    console.log("Stopping the camera.");
-    console.log(container)
-
     video = container.querySelector('.video-streamer');
-
-    console.log(video);
     
     for (const track of video.srcObject.getTracks()) {
         track.stop();

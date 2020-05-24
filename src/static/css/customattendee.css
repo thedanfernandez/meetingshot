@@ -40,8 +40,8 @@
   font-weight: bold;
   cursor: pointer;
   position: absolute;
-  top: 45px;
-  right: 45px;
+  top: 20px;
+  right: 55px;
 }
 
 .custom-image-modal {
@@ -80,6 +80,55 @@
 }
 
 .modal-label {
-  margin: 50px 0px 0px 50px;
+  margin: 30px 0px 10px 50px;
   height: 20px;
+}
+
+/* 
+  Card Styles
+ */
+ .card {
+  display: block;
+  border-radius: 5px;
+  border: 0.5px solid #d9d9d9;
+  min-height: 140px;
+  background: white;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  float: left;
+  margin-right: 16px;
+  margin-top: 16px;
+  width: 240px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+}
+
+.card > .card-image-container > img {
+  position: relative;
+  display: block;
+  border-radius: 4px 4px 0px 0px;
+  width: 100%;
+  cursor: pointer;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.card-text {
+  position: relative;
+  margin-top: 4px;
+  font-weight: bold;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.card-image-container{
+  height: 135px;
+  max-height: 135px;
+  overflow: hidden;
 }
