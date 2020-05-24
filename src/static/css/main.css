@@ -1,6 +1,7 @@
 body {
   background-color: #000000;
   font: 16px sans-serif;
+  overflow-y: hidden;
 }
 
 .meeting-details {
@@ -161,10 +162,6 @@ body {
 
 .cell1g-img {
   width: 960px;
-}
-
-
-body {
 }
 
 * {

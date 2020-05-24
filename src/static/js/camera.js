@@ -16,6 +16,11 @@ function loadCamera(container, presetWidth) {
     startup(container);
 };
 
+// Source: https://stackoverflow.com/a/21696585/303696
+function isHidden(el) {
+    return (el.offsetParent === null)
+}
+
 function startup(container) {
     video = container.querySelector('.video-streamer');
     canvas = container.querySelector('.video-canvas');
@@ -45,15 +50,28 @@ function startup(container) {
                 height = width / (4 / 3);
             }
 
-            video.setAttribute('width', width);
-            video.setAttribute('height', height);
-            canvas.setAttribute('width', width);
-            canvas.setAttribute('height', height);
-            streaming = true;
+            try {
+                video.setAttribute('width', width);
+                video.setAttribute('height', height);
+
+                if (canvas != null) {
+                    canvas.setAttribute('width', width);
+                    canvas.setAttribute('height', height);
+                }
+
+                if (isHidden(container.parentElement)) {
+                    stopCamera(container);
+                } else {
+                    streaming = true;
+                }
+            } catch (videoException) {
+                console.log(videoException);
+                stopCamera(container);
+            }
         }
     }, false);
 
-    clearphoto();
+    //clearphoto();
 }
 
 // Fill the photo with an indication that none has been
@@ -93,7 +111,7 @@ function takepicture() {
 
 function stopCamera(container) {
     video = container.querySelector('.video-streamer');
-    
+
     for (const track of video.srcObject.getTracks()) {
         track.stop();
     }
