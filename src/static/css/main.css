@@ -126,6 +126,7 @@ body {
   width: 100%;
   height: 100%;
   border: none !important;
+  overflow: hidden;
 }
 /* 8-attendee grid cell 7 */
 .cell8g-7 {
