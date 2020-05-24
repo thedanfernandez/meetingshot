@@ -245,7 +245,7 @@ function exportImage() {
 
     document.documentElement.classList.add("hide-scrollbar");
 
-    html2canvas(document.querySelector("#meetingComposition"), { scrollX: 0, scrollY: 0, allowTaint: false, scale: 1 }).then(canvas => {
+    html2canvas(document.querySelector("#meetingComposition"), { scrollX: 0, scrollY: -window.scrollY, allowTaint: false, scale: 1 }).then(canvas => {
         var a = document.createElement('a');
         a.href = canvas.toDataURL();
         a.download = "meetingshot-generated-image.png";
