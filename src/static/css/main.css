@@ -25,7 +25,7 @@ body {
 }
 
 .meeting-composition {
-  width: 956px;
+  width: 959px;
   height: 582px;
   position: relative;
   background-color: #000;
@@ -37,6 +37,7 @@ body {
 .meeting-footer{
   text-align: center;
   height: 39px;
+  margin-left: 1px;
   position: absolute;
   bottom: 0vh;
 }
@@ -376,4 +377,8 @@ label {
 .topnav a.active {
   background-color: #00ACFF;
   color: white;
+}
+
+.attendee-highlight{
+  border: 3px solid #76aa3c;
 }

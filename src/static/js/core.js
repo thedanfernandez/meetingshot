@@ -106,51 +106,6 @@ function loadDefaultMeetingAttendees(attendeeCount) {
     loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
 }
 
-attendeeCount.addEventListener("change", (event) => {
-    //createGrid(event.target.value);
-    setAttendeeConstraint(event.target.value);
-});
-
-
-function getRandomAttendeeId() {
-    var generatedNumber = Math.floor(Math.random() * Math.floor(galleryAttendees.length))
-    return generatedNumber;
-}
-
-// Checks if an image already exists in the grid. This is important when we recreate the grid
-// because ideally we don't want to duplicate an image in the attendee list.
-function imageExistsInGrid(path) {
-    var meetingGrid = document.getElementById("meetingGrid");
-
-    for (i = 0; i < meetingGrid.childElementCount; i++) {
-        var element = meetingGrid.childNodes[i]
-        var photoElement = element.querySelector('.cell-image');
-
-        if (photoElement != null) {
-            var photo = photoElement.getAttribute('src')
-
-            var match = (photo === path)
-            if (match === true) {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-function createGrid(value) {
-    console.log("value=" + value);
-    loadDefaultMeetingAttendees(value);
-
-    reStyleMeetingGrid();
-}
-
-function updateMeetingAttendeeCounter() {
-    var counterLabel = document.getElementById("counterLabel");
-    counterLabel.innerHTML = document.getElementById("meetingGrid").childElementCount;
-}
-
 // It's important to use this function to preserve the user's choices for previous
 // images and selections. Otherwise the grid is re-created.
 function setAttendeeConstraint(numberOfAttendees) {
@@ -205,6 +160,76 @@ function setAttendeeConstraint(numberOfAttendees) {
     reStyleMeetingGrid();
 }
 
+function removeHighlightEntirely(){
+    var meetingGrid = document.getElementById("meetingGrid");
+    for(meetingGridChild = 0; meetingGridChild < meetingGrid.childElementCount; meetingGridChild++){
+        var targetAttendee = meetingGrid.childNodes[meetingGridChild];
+        if (targetAttendee.classList.contains("attendee-highlight")){
+            targetAttendee.classList.remove("attendee-highlight");
+        }
+    }
+}
+
+function setAttendeeHighlight(highlightCellId){
+    var meetingGrid = document.getElementById("meetingGrid");
+    
+    removeHighlightEntirely();
+
+    if(highlightCellId.toLowerCase() != 'none'){
+        var targetAttendee = meetingGrid.childNodes[highlightCellId - 1];
+        if (!targetAttendee.classList.contains("attendee-highlight")){
+            targetAttendee.classList.add("attendee-highlight");
+        }
+    }
+}
+
+attendeeCount.addEventListener("change", (event) => {
+    setAttendeeConstraint(event.target.value);
+});
+
+attendeeHighlight.addEventListener("change", (event) => {
+    setAttendeeHighlight(event.target.value);
+});
+
+function getRandomAttendeeId() {
+    var generatedNumber = Math.floor(Math.random() * Math.floor(galleryAttendees.length))
+    return generatedNumber;
+}
+
+// Checks if an image already exists in the grid. This is important when we recreate the grid
+// because ideally we don't want to duplicate an image in the attendee list.
+function imageExistsInGrid(path) {
+    var meetingGrid = document.getElementById("meetingGrid");
+
+    for (i = 0; i < meetingGrid.childElementCount; i++) {
+        var element = meetingGrid.childNodes[i]
+        var photoElement = element.querySelector('.cell-image');
+
+        if (photoElement != null) {
+            var photo = photoElement.getAttribute('src')
+
+            var match = (photo === path)
+            if (match === true) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+function createGrid(value) {
+    console.log("value=" + value);
+    loadDefaultMeetingAttendees(value);
+
+    reStyleMeetingGrid();
+}
+
+function updateMeetingAttendeeCounter() {
+    var counterLabel = document.getElementById("counterLabel");
+    counterLabel.innerHTML = document.getElementById("meetingGrid").childElementCount;
+}
+
 function exportImage() {
     // Prepare video background because we know that html2canvas doesn't deal with those.
     var meetingGrid = document.getElementById('meetingGrid');
@@ -245,7 +270,10 @@ function exportImage() {
 
     document.documentElement.classList.add("hide-scrollbar");
 
-    html2canvas(document.querySelector("#meetingComposition"), { scrollX: 0, scrollY: -window.scrollY, allowTaint: false, scale: 1 }).then(canvas => {
+    var targetElement = document.querySelector("#meetingComposition");
+    console.log(targetElement.clientWidth);
+
+    html2canvas(targetElement, { scrollX: 0, scrollY: -window.scrollY, allowTaint: false, scale: 1.0, width: targetElement.clientWidth }).then(canvas => {
         var a = document.createElement('a');
         a.href = canvas.toDataURL();
         a.download = "meetingshot-generated-image.png";
