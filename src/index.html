@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
     <title>Screenshot Generator | MeetingShot</title>
+
+    <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
+    <meta property="og:description"
+        content="MeetingShot allows you to generate custom screenshots of Zoom meetings with notable attendees." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://meetingshot.com/" />
+    <meta property="og:updated_time" content="2020-05-23T00:58:02&#43;00:00" />
+    <meta property="og:image" content="https://meetingshot.com/static/images/header.png" />
 </head>
 
 <body>
@@ -40,31 +48,31 @@
                             <option value="9">9</option>
                         </select>
                     </div>
-                </span>
-            </div>
-
-            <div class="selector-composite">
-                <label for="attendeeHighlight">Highlight attendee:</label>
-                <div class="select">
-                    <select id="attendeeHighlight" name="attendeeHighlight">
-                        <option selected value="None">None</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
+                    </span>
                 </div>
-            </div>
 
-            <input class="pure-button pure-button-primary export-button" type="button" id="exportShot" name="exportShot"
-                value="Export Meeting Image" onclick="exportImage();" />
-            <br />
-        </div>
+                <div class="selector-composite">
+                    <label for="attendeeHighlight">Highlight attendee:</label>
+                    <div class="select">
+                        <select id="attendeeHighlight" name="attendeeHighlight">
+                            <option selected value="None">None</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input class="pure-button pure-button-primary export-button" type="button" id="exportShot"
+                    name="exportShot" value="Export Meeting Image" onclick="exportImage();" />
+                <br />
+            </div>
     </section>
 
     <main>
