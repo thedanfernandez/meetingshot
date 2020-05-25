@@ -3,9 +3,9 @@ window.addEventListener("load", loadMeetingAttendees(6), false);
 window.addEventListener("load", loadGalleryCards, false);
 window.addEventListener("load", updateMeetingAttendeeCounter, false);
 
-function loadMeetingAttendees(numberOfAttendees) {
+function loadMeetingAttendees(attendeeCount) {
   //create an array of attendee lists
-  attendeeList = galleryAttendees.slice(0, numberOfAttendees);
+  attendeeList = galleryAttendees.slice(0, attendeeCount);
 
   const meetingGrid = document.getElementById("meetingGrid");
 
@@ -27,14 +27,14 @@ function loadMeetingAttendees(numberOfAttendees) {
   }
 
   //get child nodes here
-  reStyleGridCells(numberOfAttendees);
+  reStyleGridCells(attendeeCount);
 }
 
-function reStyleGridCells(numberOfAttendees) {
+function reStyleGridCells(attendeeCount) {
   const meetingGrid = document.getElementById("meetingGrid");
 
-  console.log("GridCells: " + numberOfAttendees);
-  switch (numberOfAttendees) {
+  console.log("GridCells: " + attendeeCount);
+  switch (attendeeCount) {
     case 8:
       meetingGrid.childNodes[6].className = "cell8g-7";
       meetingGrid.childNodes[7].className = "cell8g-8";
@@ -75,37 +75,30 @@ function removeImageCss(el) {
 }
 
 // Switch style based on # of attendees
-function reStyleMeetingGrid(numberOfAttendees) {
-  console.log("Re-styling for " + numberOfAttendees);
+function reStyleMeetingGrid(attendeeCount) {
+  console.log("Re-styling for " + attendeeCount);
   const meetingGrid = document.getElementById("meetingGrid");
 
-  if (numberOfAttendees >= 5 && numberOfAttendees <= 9) {
+  if (attendeeCount >= 5 && attendeeCount <= 9) {
     meetingGrid.className = "grid grid-border grid-3row-3col";
-  } else if (numberOfAttendees >= 3 && numberOfAttendees <= 4) {
+  } else if (attendeeCount >= 3 && attendeeCount <= 4) {
     meetingGrid.className = "grid grid-border grid-2row-2col";
-  } else if (numberOfAttendees >= 1 && numberOfAttendees <= 2) {
+  } else if (attendeeCount >= 1 && attendeeCount <= 2) {
     meetingGrid.className = "grid grid-border grid-1row-2col";
   }
 
-  reStyleGridCells(numberOfAttendees);
+  reStyleGridCells(attendeeCount);
 }
-
-// var attendeeCount = document.getElementById("attendeeCount");
-
-// function loadDefaultMeetingAttendees(attendeeCount) {
-//   attendeeCount.value = attendeeCount;
-//   loadMeetingAttendees(galleryAttendees.slice(0, attendeeCount));
-// }
 
 // It's important to use this function to preserve the user's choices for previous
 // images and selections. Otherwise the grid is re-created.
-function setAttendeeConstraint(numberOfAttendees) {
+function setAttendeeConstraint(attendeeCount) {
   var meetingGrid = document.getElementById("meetingGrid");
   var childCount = meetingGrid.childElementCount;
 
   // We need to reduce child elements.
-  if (childCount > numberOfAttendees) {
-    var elementsToRemove = childCount - numberOfAttendees;
+  if (childCount > attendeeCount) {
+    var elementsToRemove = childCount - attendeeCount;
 
     for (iterator = 0; iterator < elementsToRemove; iterator++) {
       var elementToRemove = meetingGrid.childNodes[childCount - 1 - iterator];
@@ -120,9 +113,9 @@ function setAttendeeConstraint(numberOfAttendees) {
 
       meetingGrid.removeChild(elementToRemove);
     }
-  } else if (childCount < numberOfAttendees) {
+  } else if (childCount < attendeeCount) {
     // We need to add meeting attendees.
-    var elementsToAdd = numberOfAttendees - childCount;
+    var elementsToAdd = attendeeCount - childCount;
 
     console.log("To add: " + elementsToAdd);
 
@@ -151,7 +144,7 @@ function setAttendeeConstraint(numberOfAttendees) {
   }
 
   updateMeetingAttendeeCounter();
-  reStyleMeetingGrid(numberOfAttendees);
+  reStyleMeetingGrid(attendeeCount);
 }
 
 function removeHighlightEntirely() {
@@ -181,7 +174,7 @@ function setAttendeeHighlight(highlightCellId) {
   }
 }
 
-attendeeCount.addEventListener("change", (event) => {
+selectAttendeeCount.addEventListener("change", (event) => {
   setAttendeeConstraint(event.target.value);
 });
 
