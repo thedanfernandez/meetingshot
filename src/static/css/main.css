@@ -15,7 +15,7 @@ body {
   background-color: #ffffff;
 }
 
-.background2 {
+.meeting-background {
   padding-top: 100px;
   padding-bottom: 50px;
   background-color: #000;
@@ -147,6 +147,13 @@ body {
 
 .cell2g {
   grid-column: 1;
+  max-width: 480px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.cell2g-2 {
+  grid-column: 2;
   max-width: 480px;
   object-fit: contain;
   overflow: hidden;

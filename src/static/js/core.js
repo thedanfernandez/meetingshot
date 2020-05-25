@@ -33,45 +33,72 @@ function loadMeetingAttendees(attendeeCount) {
 function reStyleGridCells(attendeeCount) {
   const meetingGrid = document.getElementById("meetingGrid");
 
-  console.log("GridCells: " + attendeeCount);
-  switch (attendeeCount) {
+  console.log("Inside reStyleGridCells: " + attendeeCount);
+
+  switch (parseInt(attendeeCount)) {
+    case 9:
+      setallChildNodesCss(meetingGrid, "cell");
+      break;
     case 8:
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[6].className = "cell8g-7";
       meetingGrid.childNodes[7].className = "cell8g-8";
       break;
     case 7:
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[6].className = "cell7g-7";
       break;
+    case 6:
+      setallChildNodesCss(meetingGrid, "cell");
+      break;
     case 5:
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[3].className = "cell5g-4";
       meetingGrid.childNodes[4].className = "cell5g-5";
       break;
     case 4:
-      removeImageCss(meetingGrid);
+      setallChildNodesCss(meetingGrid, "cell");
+
       break;
     case 3:
+      console.log("inside 3!");
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[2].className = "cell3g-3";
-      removeImageCss(meetingGrid);
       break;
     case 2:
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[0].className = "cell2g";
-      meetingGrid.childNodes[1].className = "cell2g";
-      removeImageCss(meetingGrid);
+      meetingGrid.childNodes[1].className = "cell2g-2";
       break;
     case 1:
+      setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[0].className = "cell1g-1";
-      let item = meetingGrid.childNodes[0].querySelectorAll("img");
-      console.log(item);
-      item[0].className = "cell1g-img";
+
       break;
     default:
+      console.log("I should never be here");
       break;
   }
+
+  setNodeImageCss(parseInt(attendeeCount));
 }
 
-function removeImageCss(el) {
-  let imgMatches = el.querySelectorAll("img");
-  imgMatches.forEach((x) => (x.className = ""));
+function setallChildNodesCss(el, style) {
+  el.childNodes.forEach((x) => (x.className = style));
+}
+
+//Set CSS for Image 1 in cell 1
+function setNodeImageCss(attendeeCount) {
+  const meetingGrid = document.getElementById("meetingGrid");
+  if (parseInt(attendeeCount) === 1) {
+    let item = meetingGrid.childNodes[0].querySelectorAll("img");
+    console.log("image: " + item);
+    item[0].className = "cell1g-img";
+  } else {
+    let item = meetingGrid.childNodes[0].querySelectorAll("img");
+    console.log("image: " + item);
+    item[0].className = "cell-img";
+  }
 }
 
 // Switch style based on # of attendees
