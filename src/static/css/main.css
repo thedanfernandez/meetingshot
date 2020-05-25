@@ -31,11 +31,11 @@ body {
   position: relative;
   background-color: #000;
   margin: 0 auto;
-  padding:0;
+  padding: 0;
   margin-top: 10px;
 }
 
-.meeting-footer{
+.meeting-footer {
   text-align: center;
   height: 39px;
   margin-left: 1px;
@@ -48,8 +48,8 @@ body {
 }
 
 .hide-scrollbar {
-	overflow: -moz-hidden-unscrollable;
-	overflow: hidden;
+  overflow: -moz-hidden-unscrollable;
+  overflow: hidden;
 }
 
 /*****************
@@ -109,7 +109,7 @@ body {
   overflow: hidden;
 }
 
-.cell-container{
+.cell-container {
   width: 100%;
   height: 100%;
   border: none !important;
@@ -146,6 +146,7 @@ body {
 }
 
 .cell2g {
+  grid-column: 1;
   max-width: 480px;
   object-fit: contain;
   overflow: hidden;
@@ -250,7 +251,7 @@ label {
   border: none !important;
 }
 
-.option-overlay{
+.option-overlay {
   display: none;
   position: absolute;
   top: 0px;
@@ -259,7 +260,7 @@ label {
   height: 100%;
   border: none;
   background-color: black;
-  opacity: .5;
+  opacity: 0.5;
   text-align: center;
 }
 
@@ -281,7 +282,7 @@ label {
   margin: auto;
 }
 
-.attendee-counter-label{
+.attendee-counter-label {
   color: #ffffff;
   font-size: 8pt;
   position: absolute;
@@ -315,11 +316,11 @@ label {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #00ACFF;
+  background-color: #00acff;
   color: white;
 }
 
-.attendee-highlight{
+.attendee-highlight {
   border: 3px solid #76aa3c;
 }
 
@@ -348,20 +349,20 @@ select::-ms-expand {
   line-height: 2;
   background: #34495e;
   overflow: hidden;
-  border-radius: .25em;
+  border-radius: 0.25em;
   margin-top: -8px;
   margin-left: 10px;
   margin-right: 15px;
 }
 select {
   flex: 1;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   color: #fff;
   cursor: pointer;
 }
 /* Arrow */
 .select::after {
-  content: '\25BC';
+  content: "\25BC";
   position: absolute;
   top: 0;
   right: 0;
@@ -369,21 +370,21 @@ select {
   background: #34495e;
   cursor: pointer;
   pointer-events: none;
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
   color: #fff;
 }
 /* Transition */
 .select:hover::after {
-  color: #00ACFF;
+  color: #00acff;
 }
 
-.selector-composite{
+.selector-composite {
   display: inline-flex;
   margin-right: 15px;
 }
 
-.export-button{
+.export-button {
   margin-top: -9px;
 }
