@@ -97,7 +97,7 @@ function setNodeImageCss(attendeeCount) {
   } else {
     let item = meetingGrid.childNodes[0].querySelectorAll("img");
     console.log("image: " + item);
-    item[0].className = "cell-img";
+    item[0].className = "cell-image";
   }
 }
 
