@@ -16,5 +16,7 @@ let galleryAttendees = [
   new Attendee("John Krasinski", "static/images/attendee-john-krasinski.png"),
   new Attendee("Sleeping Puppy", "static/images/attendee-puppy.png"),
   new Attendee("Meeting Llama", "static/images/attendee-llama.png"),
-  new Attendee("Colin Jost", "static/images/attendee-colin-jost.png")
+  new Attendee("Colin Jost", "static/images/attendee-colin-jost.png"),
+  new Attendee("DHH", "static/images/attendee-dhh.png"),
+  new Attendee("Jason Fried", "static/images/attendee-jason-fried.png")
 ];
