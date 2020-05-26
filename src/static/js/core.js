@@ -16,10 +16,11 @@ function loadMeetingAttendees(attendeeCount) {
               <div class="cell-container">
                 <img
                     class="cell-image"
+                    alt="Meeting photo of ${attendeeList[i].name}"
                     src="${attendeeList[i].path}"
                 />
                 <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay">
-                    <img src="static/images/image.svg"></img>
+                    <img src="static/images/image.svg" />
                 </div>
               </div>
             </div>`;
@@ -150,21 +151,25 @@ function setAttendeeConstraint(attendeeCount) {
       console.log("Adding attendee, iteration " + iterator);
       var randomAttendee = 0;
       var imagePath = "";
-
+      var imageName = "";
       do {
         randomAttendee = getRandomAttendeeId();
         imagePath = galleryAttendees[randomAttendee].path;
+        imageName = galleryAttendees[randomAttendee].name;
       } while (imageExistsInGrid(imagePath));
 
       let attendeeHtml = `<div class="cell">
                             <div class="cell-container">
                               <img
                                 class="cell-image"
+                                alt="Meeting photo of ${imageName}"
                                 src="${imagePath}"
                               />
-                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay">
+                                <img src="static/images/image.svg" />
+                              </div>
                             </div>
-                            </div>`;
+                          </div>`;
 
       meetingGrid.insertAdjacentHTML("beforeend", attendeeHtml);
     }
