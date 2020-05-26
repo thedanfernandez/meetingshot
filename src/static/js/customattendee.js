@@ -74,7 +74,9 @@ function updateAttendeeWebStream(context) {
 }
 
 function processCustomImage(context, fileSelector) {
+  console.log("Processing custom image.");
   if (fileSelector.files && fileSelector.files[0]) {
+    console.log("Context custom image is in:" + context)
     var reader = new FileReader();
 
     reader.onload = function (e) {
@@ -95,9 +97,11 @@ function processCustomImage(context, fileSelector) {
                               <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>`;
     };
 
+    console.log("Exited file picker.");
     reader.readAsDataURL(fileSelector.files[0]);
-
   }
+
+  fileSelector.value = null;
 
   hideModal();
 }
