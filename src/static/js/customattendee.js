@@ -40,7 +40,7 @@ function showModal(context) {
   modal.style.display = "flex";
   updateContext = context;
 
-  var meetingDetails = document.querySelector('.meeting-details');
+  var meetingDetails = document.querySelector('.light-color-block');
   var nodes = meetingDetails.getElementsByTagName('*');
   for (var i = 0; i < nodes.length; i++) {
     nodes[i].disabled = true;
@@ -53,7 +53,7 @@ function showModal(context) {
 function hideModal() {
   modal.style.display = "none";
 
-  var meetingDetails = document.querySelector('.meeting-details');
+  var meetingDetails = document.querySelector('.light-color-block');
   var nodes = meetingDetails.getElementsByTagName('*');
   for (var i = 0; i < nodes.length; i++) {
     nodes[i].disabled = false;
