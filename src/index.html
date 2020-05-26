@@ -2,8 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163469469-2');
+    </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
@@ -32,11 +41,11 @@
 
             <div class="selector-composite">
                 <div style="display: inline">
-                    <label for="attendeeCount">Number of Attendees:</label>
+                    <label for="selectAttendeeCount">Number of Attendees:</label>
                 </div>
                 <div style="display: inline">
                     <div class="select">
-                        <select id="attendeeCount" name="attendeeCount">
+                        <select id="selectAttendeeCount" name="selectAttendeeCount">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -76,7 +85,7 @@
     </section>
 
     <main>
-        <div class="background2">
+        <div class="meeting-background">
             <!-- Meeting Grid  -->
             <div id="meetingComposition" class="meeting-composition">
                 <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
