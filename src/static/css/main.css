@@ -4,7 +4,7 @@ body {
   overflow-y: hidden;
 }
 
-.meeting-details {
+.light-color-block {
   background-color: #cccdd1;
   border: 1px;
   border-bottom: slategray;
@@ -32,7 +32,7 @@ body {
   background-color: #000;
   margin: 0 auto;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .meeting-footer {
