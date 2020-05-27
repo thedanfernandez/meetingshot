@@ -66,20 +66,20 @@ function reStyleGridCells(attendeeCount) {
       break;
     case 8:
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[6].className = "cell8g-7";
-      meetingGrid.childNodes[7].className = "cell8g-8";
+      meetingGrid.childNodes[6].className = "cell cell8g-7";
+      meetingGrid.childNodes[7].className = "cell cell8g-8";
       break;
     case 7:
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[6].className = "cell7g-7";
+      meetingGrid.childNodes[6].className = "cell cell7g-7";
       break;
     case 6:
       setallChildNodesCss(meetingGrid, "cell");
       break;
     case 5:
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[3].className = "cell5g-4";
-      meetingGrid.childNodes[4].className = "cell5g-5";
+      meetingGrid.childNodes[3].className = "cell cell5g-4";
+      meetingGrid.childNodes[4].className = "cell cell5g-5";
       break;
     case 4:
       setallChildNodesCss(meetingGrid, "cell");
@@ -88,16 +88,16 @@ function reStyleGridCells(attendeeCount) {
     case 3:
       console.log("inside 3!");
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[2].className = "cell3g-3";
+      meetingGrid.childNodes[2].className = "cell cell3g-3";
       break;
     case 2:
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[0].className = "cell2g";
-      meetingGrid.childNodes[1].className = "cell2g-2";
+      meetingGrid.childNodes[0].className = "cell cell2g";
+      meetingGrid.childNodes[1].className = "cell cell2g-2";
       break;
     case 1:
       setallChildNodesCss(meetingGrid, "cell");
-      meetingGrid.childNodes[0].className = "cell1g-1";
+      meetingGrid.childNodes[0].className = "cell cell1g-1";
 
       break;
     default:
