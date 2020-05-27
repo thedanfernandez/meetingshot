@@ -48,6 +48,8 @@ function showModal(context) {
 
   var container = document.getElementById("camera-modal");
   loadCamera(container, 240);
+
+  ga('send', 'event', 'Actions', 'load_modal', "custom_attendee");
 }
 
 function hideModal() {
@@ -61,16 +63,22 @@ function hideModal() {
 
   var container = document.getElementById("camera-modal");
   stopCamera(container);
+
+  ga('send', 'event', 'Actions', 'hide_modal', "custom_attendee");
 }
 
 function updateAttendee(context, newImage) {
   setImage(context, newImage.src);
   hideModal();
+
+  ga('send', 'event', 'Actions', 'update_attendee_precooked_image', newImage.src);
 }
 
 function updateAttendeeWebStream(context) {
   hideModal();
   insertWebStream(context);
+
+  ga('send', 'event', 'Actions', 'update_attendee_webcam', "custom_attendee_modal");
 }
 
 function processCustomImage(context, fileSelector) {
@@ -104,6 +112,7 @@ function processCustomImage(context, fileSelector) {
   fileSelector.value = null;
 
   hideModal();
+  ga('send', 'event', 'Actions', 'update_attendee_custom_image', "custom_attendee_modal");
 }
 
 function loadGalleryCards() {

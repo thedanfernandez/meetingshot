@@ -53,6 +53,7 @@ function loadMeetingAttendees(attendeeCount) {
 
   //get child nodes here
   reStyleGridCells(attendeeCount);
+  populateHighlightDropdown(attendeeCount);
 }
 
 function reStyleGridCells(attendeeCount) {
@@ -202,6 +203,8 @@ function setAttendeeConstraint(attendeeCount) {
   updateMeetingAttendeeCounter();
   reStyleMeetingGrid(attendeeCount);
   populateHighlightDropdown(attendeeCount);
+
+  ga('send', 'event', 'Actions', 'set_attendee_number', attendeeCount);
 }
 
 function removeHighlightEntirely() {
@@ -229,6 +232,8 @@ function setAttendeeHighlight(highlightCellId) {
       targetAttendee.classList.add("attendee-highlight");
     }
   }
+
+  ga('send', 'event', 'Actions', 'set_attendee_highlight', highlightCellId);
 }
 
 selectAttendeeCount.addEventListener("change", (event) => {
@@ -341,11 +346,6 @@ function exportImage() {
 
   document.querySelector(".hidden-custom-image").style.visibility = "hidden";
   document.querySelector(".main-page-video").style.visibility = "visible";
-}
 
-function shareToTwitter() {
-  window.open(
-    'https://twitter.com/intent/tweet?text=%F0%9F%93%B8Check%20out%20%23MeetingShot%20by%20%40danielfe%20and%20%40denniscode%3A%20https%3A%2F%2Fmeetingshot.com.',
-    '_blank'
-  );
+  ga('send', 'event', 'Actions', 'export_image', "top_bar");
 }
