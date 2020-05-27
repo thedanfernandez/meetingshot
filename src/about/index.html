@@ -51,8 +51,13 @@
     <div class="light-color-block">
       <h1>About MeetingShot</h1>
       <div class="content-block">
-        <p>MeetingShot is a fun experimental project that allows you to generate faux Zoom meeting screenshots that place you in the company of celebrities and less popular characters without you having to actually know them.</p>
-        <p>It was created by <a href="//twitter.com/danielfe">Dan Fernandez</a> and <a href="//twitter.com/denniscode">Den Delimarsky</a> over a weekend after realizing that we never get to be a part of any meetings with president Barack Obama or Ruby on Rails creator David Heinemeier Hansson. So we decided to fake it until we make it.</p>
+        <p>MeetingShot is a fun experimental project that allows you to generate faux Zoom meeting screenshots that
+          place you in the company of celebrities and less popular characters without you having to actually know them.
+        </p>
+        <p>It was created by <a href="//twitter.com/danielfe">Dan Fernandez</a> and <a
+            href="//twitter.com/denniscode">Den Delimarsky</a> over a weekend after realizing that we never get to be a
+          part of any meetings with president Barack Obama or Ruby on Rails creator David Heinemeier Hansson. So we
+          decided to fake it until we make it.</p>
       </div>
     </div>
   </main>
@@ -61,13 +66,15 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+  var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+  var doNotTrack = (dnt == "1" || dnt == "yes");
+  if (!doNotTrack) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag("config", "UA-163469469-2");
+    gtag('config', 'UA-163469469-2');
+  }
 </script>
 
 </html>
