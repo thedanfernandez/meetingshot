@@ -3,6 +3,30 @@ window.addEventListener("load", loadMeetingAttendees(6), false);
 window.addEventListener("load", loadGalleryCards, false);
 window.addEventListener("load", updateMeetingAttendeeCounter, false);
 
+function populateHighlightDropdown(attendeeCount) {
+  var attendeeDropdown = document.getElementById("attendeeHighlight");
+  var length = attendeeDropdown.options.length;
+  for (i = length - 1; i >= 0; i--) {
+    attendeeDropdown.options[i] = null;
+  }
+
+  var option = document.createElement('option');
+  option.value = "None";
+  option.innerHTML = "None";
+  attendeeDropdown.appendChild(option);
+
+  console.log("Attendee count: " + attendeeCount);
+
+  var limit = parseInt(attendeeCount) + 1;
+  for (var populator = 1; populator < limit; populator++) {
+    console.log(populator);
+    var option = document.createElement('option');
+    option.value = populator;
+    option.innerHTML = populator;
+    attendeeDropdown.appendChild(option);
+  };
+}
+
 function loadMeetingAttendees(attendeeCount) {
   //create an array of attendee lists
   attendeeList = galleryAttendees.slice(0, attendeeCount);
@@ -172,6 +196,7 @@ function setAttendeeConstraint(attendeeCount) {
 
   updateMeetingAttendeeCounter();
   reStyleMeetingGrid(attendeeCount);
+  populateHighlightDropdown(attendeeCount);
 }
 
 function removeHighlightEntirely() {
@@ -313,7 +338,7 @@ function exportImage() {
   document.querySelector(".main-page-video").style.visibility = "visible";
 }
 
-function shareToTwitter(){
+function shareToTwitter() {
   window.open(
     'https://twitter.com/intent/tweet?text=%F0%9F%93%B8Check%20out%20%23MeetingShot%20by%20%40danielfe%20and%20%40denniscode%3A%20https%3A%2F%2Fmeetingshot.com.',
     '_blank'
