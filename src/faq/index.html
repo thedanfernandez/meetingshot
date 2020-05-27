@@ -53,22 +53,28 @@
 
       <h2>This doesn't work well on mobile. Why is that?</h2>
       <div class="content-block">
-        <p>You're absolutely right. This is the first prototype of the project, so we didn't focus on the mobile experience yet. As we get more free time, we'll get to that as well.</p>
+        <p>You're absolutely right. This is the first prototype of the project, so we didn't focus on the mobile
+          experience yet. As we get more free time, we'll get to that as well.</p>
       </div>
 
       <h2>Can I actually schedule a meeting with the folks listed in the image selector?</h2>
       <div class="content-block">
-        <p>No. At least not through MeetingShot. Maybe you are good friends with some of them, and if that's the case - you should reach out to them and ask.</p>
+        <p>No. At least not through MeetingShot. Maybe you are good friends with some of them, and if that's the case -
+          you should reach out to them and ask.</p>
       </div>
 
       <h2>Can I style this to look like {my favorite video call app}?</h2>
       <div class="content-block">
-        <p>No. We only used the Zoom format as a fun experiment. The project is <a href="https://github.com/thedanfernandez/meetingshot">open source</a> and you can try forking and modifying it to your needs.</p>
+        <p>No. We only used the Zoom format as a fun experiment. The project is <a
+            href="https://github.com/thedanfernandez/meetingshot">open source</a> and you can try forking and modifying
+          it to your needs.</p>
       </div>
 
       <h2>Are my custom or webcam images uploaded anywhere?</h2>
       <div class="content-block">
-        <p>No. Everything that you see is rendered directly in your browser. We do not store, analyze or send your images anywhere. We are using <a href="https://html2canvas.hertzen.com/">html2canvas</a> to generate the final image and that's also done directly in your browser and not on some remote server.</p>
+        <p>No. Everything that you see is rendered directly in your browser. We do not store, analyze or send your
+          images anywhere. We are using <a href="https://html2canvas.hertzen.com/">html2canvas</a> to generate the final
+          image and that's also done directly in your browser and not on some remote server.</p>
       </div>
     </div>
   </main>
@@ -77,13 +83,15 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+  var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+  var doNotTrack = (dnt == "1" || dnt == "yes");
+  if (!doNotTrack) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag("config", "UA-163469469-2");
+    gtag('config', 'UA-163469469-2');
+  }
 </script>
 
 </html>
