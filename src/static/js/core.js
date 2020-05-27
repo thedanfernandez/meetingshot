@@ -314,5 +314,8 @@ function exportImage() {
 }
 
 function shareToTwitter(){
-  location.href = 'https://twitter.com/intent/tweet?text=%F0%9F%93%B8Check%20out%20%23MeetingShot%20by%20%40danielfe%20and%20%40denniscode%3A%20https%3A%2F%2Fmeetingshot.com.';
+  window.open(
+    'https://twitter.com/intent/tweet?text=%F0%9F%93%B8Check%20out%20%23MeetingShot%20by%20%40danielfe%20and%20%40denniscode%3A%20https%3A%2F%2Fmeetingshot.com.',
+    '_blank'
+  );
 }
