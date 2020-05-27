@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
+    <script>
+        var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+        var doNotTrack = (dnt == "1" || dnt == "yes");
+        if (!doNotTrack) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-163469469-2');
+        }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
@@ -104,7 +117,7 @@
                 <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
 
                 <div class="meeting-footer">
-                    <img src="static/images/meeting-footer.png"></img>
+                    <img alt="Static image of Zoom meeting controls" src="static/images/meeting-footer.png"></img>
                 </div>
                 <p id="counterLabel" class="attendee-counter-label">9</p>
             </div>
@@ -147,21 +160,5 @@
 <script async type="text/javascript" src="static/js/camera.js"></script>
 <script type="text/javascript" src="static/js/customattendee.js"></script>
 <script async type="text/javascript" src="static/js/core.js"></script>
-
 <script src="static/js/html2canvas.min.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
-<script>
-    var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-    var doNotTrack = (dnt == "1" || dnt == "yes");
-    if (!doNotTrack) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-163469469-2');
-    }
-</script>
-
 </html>
