@@ -36,15 +36,40 @@ function setImage(context, source) {
                        </div>`;
 }
 
+function enableItemsBehindModal() {
+  var meetingDetails = document.querySelector('.light-color-block');
+  var nodes = meetingDetails.getElementsByTagName('*');
+  for (var mdIterator = 0; mdIterator < nodes.length; mdIterator++) {
+    nodes[mdIterator].disabled = false;
+  }
+
+  var meetingGrid = document.getElementById('meetingGrid');
+  var gridNodes = meetingGrid.getElementsByTagName('*');
+  for (var gnIterator = 0; gnIterator < nodes.length; gnIterator++) {
+    gridNodes[gnIterator].disabled = false;
+  }
+}
+
+function disableItemsBehindModal() {
+  var meetingDetails = document.querySelector('.light-color-block');
+  var nodes = meetingDetails.getElementsByTagName('*');
+  for (var mdIterator = 0; mdIterator < nodes.length; mdIterator++) {
+    nodes[mdIterator].disabled = true;
+  }
+
+  var meetingGrid = document.getElementById('meetingGrid');
+  var gridNodes = meetingGrid.getElementsByTagName('*');
+  for (var gnIterator = 0; gnIterator < nodes.length; gnIterator++) {
+    console.log("Disabling " + gridNodes[gnIterator])
+    gridNodes[gnIterator].disabled = true;
+  }
+}
+
 function showModal(context) {
   modal.style.display = "flex";
   updateContext = context;
 
-  var meetingDetails = document.querySelector('.light-color-block');
-  var nodes = meetingDetails.getElementsByTagName('*');
-  for (var i = 0; i < nodes.length; i++) {
-    nodes[i].disabled = true;
-  }
+  disableItemsBehindModal();
 
   var container = document.getElementById("camera-modal");
   loadCamera(container, 240);
@@ -55,11 +80,7 @@ function showModal(context) {
 function hideModal() {
   modal.style.display = "none";
 
-  var meetingDetails = document.querySelector('.light-color-block');
-  var nodes = meetingDetails.getElementsByTagName('*');
-  for (var i = 0; i < nodes.length; i++) {
-    nodes[i].disabled = false;
-  }
+  enableItemsBehindModal();
 
   var container = document.getElementById("camera-modal");
   stopCamera(container);
