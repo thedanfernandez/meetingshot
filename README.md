@@ -6,7 +6,7 @@ MeetingShot is a Faux Screenshot Generator designed to help those suffering from
 
 ## Contributing
 
-See the [CONTRIBUTING] contribution guidelines.
+See the [CONTRIBUTING](CONTRIBUTING) contribution guidelines.
 
 ## Demo / More Info
 
