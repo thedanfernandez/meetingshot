@@ -72,6 +72,13 @@ a.pure-button-primary {
   font-size: 120%;
 }
 
+a.pure-button-primary-bottom {
+  background: #1f8dd6;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 120%;
+}
+
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.
