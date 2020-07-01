@@ -44,7 +44,7 @@ function loadMeetingAttendees(attendeeCount) {
                     src="${attendeeList[i].path}"
                 />
                 <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay">
-                    <img src="static/images/image.svg" alt="Overlay over attendee image that allows picking other images." />
+                    <img src="../static/images/image.svg" alt="Overlay over attendee image that allows picking other images." />
                 </div>
               </div>
             </div>`;
@@ -191,7 +191,7 @@ function setAttendeeConstraint(attendeeCount) {
                                 src="${imagePath}"
                               />
                               <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay">
-                                <img src="static/images/image.svg" alt="Overlay over attendee image that allows picking other images." />
+                                <img src="../static/images/image.svg" alt="Overlay over attendee image that allows picking other images." />
                               </div>
                             </div>
                           </div>`;

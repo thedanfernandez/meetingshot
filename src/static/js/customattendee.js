@@ -19,7 +19,7 @@ function insertWebStream(context) {
 
                               </video>
                           </div>
-                          <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg"></img></div>
+                          <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="../static/images/image.svg"></img></div>
                       </div>`;
 
   loadCamera(context, context.width);
@@ -32,7 +32,7 @@ function setImage(context, source) {
                           class="cell-image"
                           src="${source}"
                           />
-                       <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg" alt="Overlay over attendee image that allows picking other images."></img></div>
+                       <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="../static/images/image.svg" alt="Overlay over attendee image that allows picking other images."></img></div>
                        </div>`;
 }
 
@@ -123,7 +123,7 @@ function processCustomImage(context, fileSelector) {
                               class="cell-image"
                               src="${e.target.result}"
                               />
-                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="static/images/image.svg" alt="Overlay over attendee image that allows picking other images."></img></div>`;
+                              <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="../static/images/image.svg" alt="Overlay over attendee image that allows picking other images."></img></div>`;
     };
 
     console.log("Exited file picker.");
