@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="../static/css/customattendee.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../static/css/header.css" />
   <title>Frequently Asked Questions | MeetingShot</title>
 
   <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
@@ -54,13 +55,19 @@
 
 <body>
   <section class="background">
-    <nav>
-      <div class="topnav">
-        <a href="../">MeetingShot</a>
-        <a href="../about/">About</a>
-        <a class="active" href="#">FAQ</a>
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <a class="pure-menu-heading" href="../">MeetingShot</a>
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item pure-menu-selected">
+                  <a href="#" class="pure-menu-link">About</a>
+              </li>
+              <li class="pure-menu-item">
+                  <a href="../faq" class="pure-menu-link">FAQ</a>
+              </li>
+          </ul>
       </div>
-    </nav>
+  </div>
   </section>
 
   <main>

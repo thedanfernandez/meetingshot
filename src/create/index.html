@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/customattendee.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/header.css" />
     <title>Screenshot Generator | MeetingShot</title>
 
     <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
@@ -51,13 +52,19 @@
 
 <body>
     <section class="background">
-        <nav>
-            <div class="topnav">
-                <a class="active" href="/">MeetingShot</a>
-                <a href="about/">About</a>
-                <a href="faq/">FAQ</a>
+        <div class="header">
+            <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+                <a class="pure-menu-heading" href="../">MeetingShot</a>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-selected">
+                        <a href="#" class="pure-menu-link">About</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="../faq" class="pure-menu-link">FAQ</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
         <div class="light-color-block">
             <h2>Meeting Details</h2>
 
@@ -157,4 +164,5 @@
 <script type="text/javascript" src="../static/js/customattendee.js"></script>
 <script async type="text/javascript" src="../static/js/core.js"></script>
 <script src="../static/js/html2canvas.min.js"></script>
+
 </html>

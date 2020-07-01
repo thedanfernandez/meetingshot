@@ -1,7 +1,8 @@
 body {
   background-color: #000000;
-  font: 16px sans-serif;
+  font: 20px sans-serif;
   overflow-y: hidden;
+  line-height: 1.7em;
 }
 
 .light-color-block {
@@ -9,6 +10,7 @@ body {
   border: 1px;
   border-bottom: slategray;
   padding: 20px 20px 20px 20px;
+  margin-top: 78px;
 }
 
 .background {
