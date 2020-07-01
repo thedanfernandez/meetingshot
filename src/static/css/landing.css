@@ -17,7 +17,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, label {
-  color: #34495e;
+  color: #fff;
 }
 
 .pure-img-responsive {
@@ -68,6 +68,13 @@ h1, h2, h3, h4, h5, h6, label {
 a.pure-button-primary {
   background: white;
   color: #1f8dd6;
+  border-radius: 5px;
+  font-size: 120%;
+}
+
+a.pure-button-primary-bottom {
+  background: #1f8dd6;
+  color: #fff;
   border-radius: 5px;
   font-size: 120%;
 }
