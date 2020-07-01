@@ -397,7 +397,8 @@ select {
 }
 
 .export-button {
-  margin-top: -9px;
+  margin-top: -5px;
+  font-size: 18px;
 }
 
 .content-block{
