@@ -1,7 +1,8 @@
 body {
   background-color: #000000;
-  font: 16px sans-serif;
+  font: 20px sans-serif;
   overflow-y: hidden;
+  line-height: 1.7em;
 }
 
 .light-color-block {
@@ -9,6 +10,7 @@ body {
   border: 1px;
   border-bottom: slategray;
   padding: 20px 20px 20px 20px;
+  margin-top: 78px;
 }
 
 .background {
@@ -295,6 +297,7 @@ label {
   position: absolute;
   bottom: 1.1vh;
   left: 350px;
+  line-height: 1;
 }
 
 /* Navigation bar */
@@ -352,12 +355,13 @@ select::-ms-expand {
   position: relative;
   display: flex;
   width: 120px;
+  font-size: 18px;
   height: 2em;
   line-height: 2;
   background: #34495e;
   overflow: hidden;
   border-radius: 0.25em;
-  margin-top: -8px;
+  margin-top: -2px;
   margin-left: 10px;
   margin-right: 15px;
 }
@@ -393,7 +397,8 @@ select {
 }
 
 .export-button {
-  margin-top: -9px;
+  margin-top: -5px;
+  font-size: 18px;
 }
 
 .content-block{

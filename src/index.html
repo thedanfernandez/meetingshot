@@ -2,159 +2,147 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
-    <script>
-        var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-        var doNotTrack = (dnt == "1" || dnt == "yes");
-        if (!doNotTrack) {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
+  <script>
+    var dnt =
+      navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+    var doNotTrack = dnt == "1" || dnt == "yes";
+    if (!doNotTrack) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'UA-163469469-2');
-        }
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/customattendee.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
-    <title>Screenshot Generator | MeetingShot</title>
+      gtag("config", "UA-163469469-2");
+    }
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | MeetingShot</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/grids-responsive-min.css" />
+  <link rel="stylesheet" href="static/css/landing.css" />
+  <link rel="stylesheet" href="static/css/header.css" />
+  <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
+  <meta property="og:description"
+    content="MeetingShot allows you to generate custom screenshots of Zoom meetings with notable attendees." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meetingshot.com/" />
+  <meta property="og:updated_time" content="2020-05-23T00:58:02&#43;00:00" />
+  <meta property="og:image" content="https://meetingshot.com/static/images/header.png" />
 
-    <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
-    <meta property="og:description"
-        content="MeetingShot allows you to generate custom screenshots of Zoom meetings with notable attendees." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://meetingshot.com/" />
-    <meta property="og:updated_time" content="2020-05-23T00:58:02&#43;00:00" />
-    <meta property="og:image" content="https://meetingshot.com/static/images/header.png" />
-
-    <link rel="apple-touch-icon" sizes="57x57" href="static/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="static/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="static/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="static/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="57x57" href="static/images/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="static/images/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="static/images/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="static/images/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="static/images/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="static/images/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
 </head>
 
 <body>
-    <section class="background">
-        <nav>
-            <div class="topnav">
-                <a class="active" href="/">MeetingShot</a>
-                <a href="about/">About</a>
-                <a href="faq/">FAQ</a>
-            </div>
-        </nav>
-        <div class="light-color-block">
-            <h2>Meeting Details</h2>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      <a class="pure-menu-heading" href="../">MeetingShot</a>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected">
+          <a href="#" class="pure-menu-link">About</a>
+        </li>
+        <li class="pure-menu-item">
+          <a href="../faq" class="pure-menu-link">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-            <div class="selector-composite">
-                <div style="display: inline">
-                    <label for="selectAttendeeCount">Number of Attendees:</label>
-                </div>
-                <div style="display: inline">
-                    <div class="select">
-                        <select id="selectAttendeeCount" name="selectAttendeeCount">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option selected value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                    </div>
-                    </span>
-                </div>
+  <div class="splash-container">
+    <div class="splash">
+      <h1>MeetingShot</h1>
+      <p class="splash-subhead">
+        MeetingShot is a Faux Screenshot Generator designed to help those
+        suffering from FOMMO - Fear of Missing Meetings Online. <br />
+      </p>
 
-                <div class="selector-composite">
-                    <label for="attendeeHighlight">Highlight attendee:</label>
-                    <div class="select">
-                        <select id="attendeeHighlight" name="attendeeHighlight">
-                            <option selected value="None">None</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                    </div>
-                </div>
+      <p>
+        <a href="create/index.html" class="pure-button pure-button-primary">
+          Create a Meeting
+        </a>
+      </p>
+      <p class="splash-subhead">
+        <br />Created by
+        <a class="white-link" href="//twitter.com/danielfe">Dan Fernandez</a>
+        and
+        <a class="white-link" href="//twitter.com/denniscode">Den Delimarsky</a>
+      </p>
+    </div>
+  </div>
 
-                <input class="pure-button pure-button-primary export-button" type="button" id="exportShot"
-                    name="exportShot" value="Export Meeting Image" onclick="exportImage();" />
-                <br />
-            </div>
-    </section>
+  <div class="content-wrapper">
+    <!-- Row 1 -->
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/meetingshot.jpg" />
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+        <h2 class="content-head content-head-ribbon">
+          Get started easily
+        </h2>
+        <p>
+          Select your meeting size between 1 and 9 attendees and click on each
+          attendee to customize their image.
+        </p>
+      </div>
+    </div>
+    <!-- Row 2 -->
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+        <h2 class="content-head content-head-ribbon">
+          Custom image and webcam support
+        </h2>
+        <p>
+          You can upload custom images (no data is kept on the server) or use
+          capture a realtime camera view of your webcam.
+        </p>
+      </div>
+      <!-- Row 3 -->
+      <div class="l-box-lrg pure-u-1 is-center pure-u-md-1-2 pure-u-lg-2-5">
+        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/attendee-llama.png" />
+      </div>
+    </div>
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/attendee-llama.png" />
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+        <h2 class="content-head content-head-ribbon">Have Fun</h2>
+        <p>
+          Unleash your creativity adding your favorite celebrities and
+          characters or by creating themed meetings like the "Brady Bunch",
+          "The Karens", or the "Worst.Meeting.Ever".
+        </p>
+      </div>
+    </div>
 
-    <main>
-        <div class="meeting-background">
-            <!-- Meeting Grid  -->
-            <div id="meetingComposition" class="meeting-composition">
-                <div id="meetingGrid" class="grid grid-border grid-3row-3col"></div>
-
-                <div class="meeting-footer">
-                    <img alt="Static image of Zoom meeting controls" src="static/images/meeting-footer.png"></img>
-                </div>
-                <p id="counterLabel" class="attendee-counter-label">9</p>
-            </div>
-            <canvas id="staticPicture"></canvas>
-
-            <!-- Modal Gallery  -->
-            <div data-html2canvas-ignore="true" class="modal" id="updateScreen">
-                <div class="modal-content">
-                    <div class="modal-label">
-                        <h3>Select an attendee</h3>
-                        <span class="modal-close" onclick="javascript:hideModal();">
-                            &times;
-                        </span>
-                    </div>
-                    <div id="gallery" class="gallery">
-                        <div id="camera-modal" class="card" onclick="updateAttendeeWebStream(updateContext);">
-                            <div class="modal-video-bucket">
-                                <div>
-                                    <video autoplay="true" id="video" class="video-streamer"></video>
-                                </div>
-                            </div>
-                            <div class="card-text">Webcam</div>
-                        </div>
-                        <div id="custom-image-modal" class="card" onclick="">
-                            <label class="custom-image-label" for="customImageInput">
-                                <img src="static/images/custom-image.png">
-                            </label>
-                            <input class="custom-image-input" id="customImageInput" type="file"
-                                accept=".jpg, .jpeg, .png" onchange="processCustomImage(updateContext, this);"></input>
-                            <div class="card-text">Custom Image</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <div class="content is-center">
+      <a href="create/index.html" class="pure-button pure-button-primary">
+        Create a Meeting Now!
+      </a>
+      <p></p>
+    </div>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e866ab6c11fc1ef"></script>
 </body>
 
-<script type="text/javascript" src="static/js/attendee.js"></script>
-<script async type="text/javascript" src="static/js/camera.js"></script>
-<script type="text/javascript" src="static/js/customattendee.js"></script>
-<script async type="text/javascript" src="static/js/core.js"></script>
-<script src="static/js/html2canvas.min.js"></script>
 </html>
