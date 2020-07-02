@@ -4,6 +4,15 @@ When contributing to this repository, please first discuss the change you wish t
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
+## Contributing an attendee to the photo gallery
+
+To add an attendee to the photo gallery:
+
+1. Name the attendee photo _attendee-firstname-lastname.png_ and add it to the `src/static/images` folder.
+   * Example: `attendee-barack-obama.png`
+2. Add the attendee metadata to the `src/static/js/attendee.js` file.
+   * Example: `new Attendee("Barack Obama", "../static/images/attendee-barack-obama.png"),`
+
 ## Pull Request Process
 
 1. Create an issue to discuss the changes with the project owners. Pull requests that were not discussed with the repository managers (outside of small fixes, such as typos) will be closed without further review.

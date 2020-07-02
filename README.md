@@ -2,7 +2,7 @@
 
 MeetingShot is a Faux Screenshot Generator designed to help those suffering from **FOMMO** - Fear of Missing Meetings Online.
 
-![Screenshot of MeetingShot website](https://github.com/thedanfernandez/meetingshot/raw/master/src/static/images/meetingshot.jpg)
+![Screenshot of MeetingShot website](https://github.com/thedanfernandez/meetingshot/raw/main/src/static/images/meetingshot.png)
 
 ## Contributing
 
