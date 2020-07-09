@@ -1,152 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"
+    ></script>
+    <script>
+      var dnt =
+        navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      var doNotTrack = dnt == "1" || dnt == "yes";
+      if (!doNotTrack) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163469469-2"></script>
-  <script>
-    var dnt =
-      navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-    var doNotTrack = dnt == "1" || dnt == "yes";
-    if (!doNotTrack) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+        gtag("config", "UA-163469469-2");
       }
-      gtag("js", new Date());
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeetingShot - Faux Meeting Screenshot Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.1/build/pure-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.1/build/grids-responsive-min.css"
+    />
+    <link rel="stylesheet" href="static/css/landing.css" />
+    <link rel="stylesheet" href="static/css/header.css" />
+    <meta
+      property="og:title"
+      content="Meeting Shot | Faux Meeting Screenshot Generator"
+    />
+    <meta
+      property="og:description"
+      content="MeetingShot allows you to generate custom screenshots of Zoom meetings with notable attendees."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://meetingshot.com/" />
+    <meta property="og:updated_time" content="2020-05-23T00:58:02&#43;00:00" />
+    <meta
+      property="og:image"
+      content="https://meetingshot.com/static/images/header.png"
+    />
 
-      gtag("config", "UA-163469469-2");
-    }
-  </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MeetingShot - Faux Meeting Screenshot Generator</title>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/grids-responsive-min.css" />
-  <link rel="stylesheet" href="static/css/landing.css" />
-  <link rel="stylesheet" href="static/css/header.css" />
-  <meta property="og:title" content="Meeting Shot | Faux Meeting Screenshot Generator" />
-  <meta property="og:description"
-    content="MeetingShot allows you to generate custom screenshots of Zoom meetings with notable attendees." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://meetingshot.com/" />
-  <meta property="og:updated_time" content="2020-05-23T00:58:02&#43;00:00" />
-  <meta property="og:image" content="https://meetingshot.com/static/images/header.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="static/images/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="static/images/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="static/images/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="static/images/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="static/images/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="static/images/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="static/images/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="static/images/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="static/images/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="static/images/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="static/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="static/images/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="static/images/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-  <link rel="apple-touch-icon" sizes="57x57" href="static/images/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="static/images/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="static/images/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="static/images/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="static/images/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="static/images/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-</head>
-
-<body>
-  <div class="header">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-      <a class="pure-menu-heading" href="../">MeetingShot</a>
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-          <a href="create/" class="pure-menu-link">Create Meeting</a>
-        </li>
-        <li class="pure-menu-item">
-          <a href="faq/" class="pure-menu-link">FAQ</a>
-        </li>
-        <li class="pure-menu-item">
-          <a href="https://github.com/thedanfernandez/meetingshot" class="pure-menu-link">GitHub</a>
-        </li>
-      </ul>
+  <body>
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="../">MeetingShot</a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="create/" class="pure-menu-link">Create Meeting</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="faq/" class="pure-menu-link">FAQ</a>
+          </li>
+          <li class="pure-menu-item">
+            <a
+              href="https://github.com/thedanfernandez/meetingshot"
+              class="pure-menu-link"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="splash-container">
-    <div class="splash">
-      <h1>MeetingShot</h1>
-      <p class="splash-subhead">
-        MeetingShot is a faux meeting screenshot generator designed to help those
-        suffering from FOMMO - Fear of Missing Meetings Online. <br />
-      </p>
+    <div class="splash-container">
+      <div class="splash">
+        <h1>MeetingShot</h1>
+        <p class="splash-subhead">
+          MeetingShot is a faux meeting screenshot generator designed to help
+          those suffering from FOMMO - Fear of Missing Meetings Online. <br />
+        </p>
 
-      <p>
-        <a href="create/index.html" class="pure-button pure-button-primary">
-          Create a Meeting
+        <p>
+          <a href="create/" class="pure-button pure-button-primary">
+            Create a Meeting
+          </a>
+        </p>
+        <p class="splash-subhead">
+          <br />Created by
+          <a class="white-link" href="//twitter.com/danielfe">Dan Fernandez</a>
+          and
+          <a class="white-link" href="//twitter.com/denniscode"
+            >Den Delimarsky</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- Row 1 -->
+      <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+          <img
+            width="500"
+            alt="Change this"
+            class="pure-img-responsive"
+            src="static/images/meetingshot.png"
+          />
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+          <h2 class="content-head content-head-ribbon">
+            Get started easily
+          </h2>
+          <p>
+            Meet with anyone, from one attendee (just yourself), to a group of
+            nine (wow, you must be popular) - in seconds. Zero cost, no
+            encryption, and no support for interactive chat. This is going to be
+            the most fun and most productive meeting you've ever had in your
+            life!
+          </p>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="ribbon l-box-lrg pure-g">
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+          <h2 class="content-head content-head-ribbon">
+            Custom image and webcam support
+          </h2>
+          <p>
+            Don't have any celebrity friends? Don't worry - we don't either. But
+            you can pretend that you are in a meeting with whoever you want. And
+            if you don't find the attendee you want in our (limited) library,
+            you can always upload a custom image or use your own webcam to
+            include the one true celebrity in the meeting.
+          </p>
+        </div>
+        <!-- Row 3 -->
+        <div class="l-box-lrg pure-u-1 is-center pure-u-md-1-2 pure-u-lg-2-5">
+          <img
+            width="500"
+            alt="Change this"
+            class="pure-img-responsive"
+            src="static/images/custom-attendees.png"
+          />
+        </div>
+      </div>
+      <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+          <img
+            width="500"
+            alt="Change this"
+            class="pure-img-responsive"
+            src="static/images/image-download.png"
+          />
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+          <h2 class="content-head content-head-ribbon">Have Fun</h2>
+          <p>
+            Unleash your creativity adding your favorite celebrities and
+            characters or by creating themed meetings like "The Brady Bunch",
+            "SNL", or the "Worst. Meeting. Ever." We'll leave it up to you to
+            create your own combinations.
+          </p>
+        </div>
+      </div>
+
+      <div class="content is-center">
+        <a href="create/" class="pure-button pure-button-primary-bottom">
+          Create a Meeting Now!
         </a>
-      </p>
-      <p class="splash-subhead">
-        <br />Created by
-        <a class="white-link" href="//twitter.com/danielfe">Dan Fernandez</a>
-        and
-        <a class="white-link" href="//twitter.com/denniscode">Den Delimarsky</a>
-      </p>
-    </div>
-  </div>
-
-  <div class="content-wrapper">
-    <!-- Row 1 -->
-    <div class="ribbon l-box-lrg pure-g">
-      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/meetingshot.png" />
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-        <h2 class="content-head content-head-ribbon">
-          Get started easily
-        </h2>
-        <p>
-          Meet with anyone, from one attendee (just yourself), to a group of nine (wow, you must be popular) - in seconds. Zero cost, no encryption, and no support
-          for interactive chat. This is going to be the most fun and most productive meeting you've ever had in your life!
-        </p>
+        <p></p>
       </div>
     </div>
-    <!-- Row 2 -->
-    <div class="ribbon l-box-lrg pure-g">
-      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-        <h2 class="content-head content-head-ribbon">
-          Custom image and webcam support
-        </h2>
-        <p>
-          Don't have any celebrity friends? Don't worry - we don't either. But you can pretend that you are in a meeting with whoever you want. And if you don't find
-          the attendee you want in our (limited) library, you can always upload a custom image or use your own webcam to include the one true celebrity
-          in the meeting.
-        </p>
-      </div>
-      <!-- Row 3 -->
-      <div class="l-box-lrg pure-u-1 is-center pure-u-md-1-2 pure-u-lg-2-5">
-        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/custom-attendees.png" />
-      </div>
-    </div>
-    <div class="ribbon l-box-lrg pure-g">
-      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-        <img width="500" alt="Change this" class="pure-img-responsive" src="static/images/image-download.png" />
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-        <h2 class="content-head content-head-ribbon">Have Fun</h2>
-        <p>
-          Unleash your creativity adding your favorite celebrities and
-          characters or by creating themed meetings like "The Brady Bunch",
-          "SNL", or the "Worst. Meeting. Ever." We'll leave it up to you to create your own combinations.
-        </p>
-      </div>
-    </div>
-
-    <div class="content is-center">
-      <a href="create/index.html" class="pure-button pure-button-primary-bottom">
-        Create a Meeting Now!
-      </a>
-      <p></p>
-    </div>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e866ab6c11fc1ef"></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e866ab6c11fc1ef"
+    ></script>
+  </body>
 </html>
