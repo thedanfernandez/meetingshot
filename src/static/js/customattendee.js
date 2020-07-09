@@ -22,6 +22,7 @@ function insertWebStream(context) {
                           <div data-html2canvas-ignore="true" onclick="javascript:showModal(this.parentNode);" class="option-overlay"><img src="../static/images/image.svg"></img></div>
                       </div>`;
 
+  console.log("Load Camera!")
   loadCamera(context, context.width);
 }
 
@@ -74,7 +75,11 @@ function showModal(context) {
   var container = document.getElementById("camera-modal");
   loadCamera(container, 240);
 
-  ga('send', 'event', 'Actions', 'load_modal', "custom_attendee");
+  try {
+    ga('send', 'event', 'Actions', 'load_modal', "custom_attendee_modal");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function hideModal() {
@@ -85,21 +90,33 @@ function hideModal() {
   var container = document.getElementById("camera-modal");
   stopCamera(container);
 
-  ga('send', 'event', 'Actions', 'hide_modal', "custom_attendee");
+  try {
+    ga('send', 'event', 'Actions', 'hide_modal', "custom_attendee_modal");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function updateAttendee(context, newImage) {
   setImage(context, newImage.src);
   hideModal();
 
-  ga('send', 'event', 'Actions', 'update_attendee_precooked_image', newImage.src);
+  try {
+    ga('send', 'event', 'Actions', 'update_attendee_precooked_image', newImage.src);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function updateAttendeeWebStream(context) {
   hideModal();
   insertWebStream(context);
 
-  ga('send', 'event', 'Actions', 'update_attendee_webcam', "custom_attendee_modal");
+  try {
+    ga('send', 'event', 'Actions', 'update_attendee_webcam', "custom_attendee_modal");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function processCustomImage(context, fileSelector) {
@@ -133,7 +150,12 @@ function processCustomImage(context, fileSelector) {
   fileSelector.value = null;
 
   hideModal();
-  ga('send', 'event', 'Actions', 'update_attendee_custom_image', "custom_attendee_modal");
+
+  try {
+    ga('send', 'event', 'Actions', 'update_attendee_custom_image', "custom_attendee_modal");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function loadGalleryCards() {
