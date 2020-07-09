@@ -15,11 +15,8 @@ function populateHighlightDropdown(attendeeCount) {
   option.innerHTML = "None";
   attendeeDropdown.appendChild(option);
 
-  console.log("Attendee count: " + attendeeCount);
-
   var limit = parseInt(attendeeCount) + 1;
   for (var populator = 1; populator < limit; populator++) {
-    console.log(populator);
     var option = document.createElement('option');
     option.value = populator;
     option.innerHTML = populator;
@@ -59,8 +56,6 @@ function loadMeetingAttendees(attendeeCount) {
 function reStyleGridCells(attendeeCount) {
   const meetingGrid = document.getElementById("meetingGrid");
 
-  console.log("Inside reStyleGridCells: " + attendeeCount);
-
   switch (parseInt(attendeeCount)) {
     case 9:
       setallChildNodesCss(meetingGrid, "cell");
@@ -87,7 +82,6 @@ function reStyleGridCells(attendeeCount) {
 
       break;
     case 3:
-      console.log("inside 3!");
       setallChildNodesCss(meetingGrid, "cell");
       meetingGrid.childNodes[2].className = "cell cell3g-3";
       break;
@@ -118,18 +112,15 @@ function setNodeImageCss(attendeeCount) {
   const meetingGrid = document.getElementById("meetingGrid");
   if (parseInt(attendeeCount) === 1) {
     let item = meetingGrid.childNodes[0].querySelectorAll("img");
-    console.log("image: " + item);
     item[0].className = "cell1g-img";
   } else {
     let item = meetingGrid.childNodes[0].querySelectorAll("img");
-    console.log("image: " + item);
     item[0].className = "cell-image";
   }
 }
 
 // Switch style based on # of attendees
 function reStyleMeetingGrid(attendeeCount) {
-  console.log("Re-styling for " + attendeeCount);
   const meetingGrid = document.getElementById("meetingGrid");
 
   if (attendeeCount >= 5 && attendeeCount <= 9) {
@@ -160,7 +151,6 @@ function setAttendeeConstraint(attendeeCount) {
       );
 
       if (videoContainer) {
-        console.log("Need to stop the camera.");
         stopCamera(videoContainer);
       }
 
@@ -170,10 +160,7 @@ function setAttendeeConstraint(attendeeCount) {
     // We need to add meeting attendees.
     var elementsToAdd = attendeeCount - childCount;
 
-    console.log("To add: " + elementsToAdd);
-
     for (iterator = 0; iterator < elementsToAdd; iterator++) {
-      console.log("Adding attendee, iteration " + iterator);
       var randomAttendee = 0;
       var imagePath = "";
       var imageName = "";
@@ -294,18 +281,12 @@ function exportImage() {
     exportIterator < containers.length;
     exportIterator++
   ) {
-    console.log("There is a video container we need to process.");
 
     var container = containers[exportIterator];
     var video = container.querySelector(".main-page-video");
     var canvas = container.querySelector(".video-canvas");
     var photo = container.querySelector(".hidden-custom-image");
     var context = canvas.getContext("2d");
-
-    console.log(container);
-    console.log(video);
-    console.log(canvas);
-    console.log(photo);
 
     width = video.videoWidth;
     height = video.videoHeight / (video.videoWidth / width);
@@ -327,7 +308,6 @@ function exportImage() {
   document.documentElement.classList.add("hide-scrollbar");
 
   var targetElement = document.querySelector("#meetingComposition");
-  console.log(targetElement.clientWidth);
 
   html2canvas(targetElement, {
     scrollX: 0,

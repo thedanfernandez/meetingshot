@@ -65,7 +65,6 @@ function startup(container) {
                     streaming = true;
                 }
             } catch (videoException) {
-                console.log(videoException);
                 stopCamera(container);
             }
         }
