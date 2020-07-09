@@ -10,4 +10,4 @@ Read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Demo / More Info
 
-See the [MeetingShot Website](https://meetingshot.com) for more information.
+See the [MeetingShot website](https://meetingshot.com) for more information.

@@ -16,13 +16,23 @@ body {
   font-size: 13px;
 }
 
-h1, h2, h3, h4, h5, h6, label {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
   color: #fff;
 }
 
 .pure-img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+.pure-u-lg-3-5 {
+  width: 58%;
 }
 
 /*
